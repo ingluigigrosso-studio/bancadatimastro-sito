@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banca dati Mastro</title>
+<meta name="description" content="Banca dati Mastro: tempari, manuali di regola d'arte e costi parametrici per opere di ingegneria civile e industriale. In vendita su la Feltrinelli, IBS, Amazon e nelle librerie online.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: catalogo editoriale a griglia, scandito da corsi di mattoni come i volumi della collana */
+:root{
+  --paper:#F2EEE6; --paper-2:#E9E2D6; --card:#FAF8F4;
+  --ink:#1E2430; --ink-2:#4A505C; --line:#CFC6B8;
+  --brick:#A63A28; --brick-2:#C2533C; --ochre:#9A6A12; --on-brick:#FFF7F2;
+  --f-display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --f-serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#16181D; --paper-2:#1E2128; --card:#20232B;
+  --ink:#EDE8DF; --ink-2:#B3AEA5; --line:#383C46;
+  --brick:#D9654D; --brick-2:#E8806A; --ochre:#D8A848; --on-brick:#1A0E0B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#16181D; --paper-2:#1E2128; --card:#20232B;
+  --ink:#EDE8DF; --ink-2:#B3AEA5; --line:#383C46;
+  --brick:#D9654D; --brick-2:#E8806A; --ochre:#D8A848; --on-brick:#1A0E0B; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brick);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+
+/* Logo: muro di mattoni */
+.wall{display:inline-grid;grid-template-columns:repeat(4,1fr);gap:2px;width:34px;flex:none}
+.wall i{display:block;height:6px;background:var(--brick)}
+.wall i:nth-child(5){grid-column:span 1}
+.wall .h{grid-column:span 2}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1.5px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font:700 21px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase}
+.nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.nav a{font:600 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding-block:6px}
+.nav a:hover{color:var(--brick)}
+
+/* Hero */
+.hero{padding-block:56px 0}
+.eyebrow{font:700 15px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--brick)}
+.hero h1{font:700 clamp(36px,6vw,68px)/1.06 var(--f-serif);margin-top:18px;max-width:17ch}
+.hero .lede{font-size:clamp(18px,2.1vw,21px);color:var(--ink-2);margin-top:20px;max-width:46ch}
+.buy{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px}
+.buy span{color:var(--ink-2);font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--brick);color:var(--on-brick);text-decoration:none;font:700 18px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;padding:14px 20px}
+.btn:hover{background:var(--brick-2)}
+.store{display:inline-block;margin-top:2px;font:600 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--brick);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px;align-self:flex-start}
+.store:hover{color:var(--brick-2)}
+.shelf{margin-top:40px;position:relative}
+.shelf img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 22px rgba(30,20,10,.18))}
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink);margin-top:36px}
+.figures div{padding:20px 16px 22px 0;border-right:1px solid var(--line);padding-left:16px}
+.figures div:first-child{padding-left:0}
+.figures div:last-child{border-right:0}
+.figures strong{display:block;font:700 clamp(36px,5vw,54px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.figures span{display:block;color:var(--ink-2);font-size:15px;margin-top:6px;line-height:1.35}
+@media (max-width:700px){.figures{grid-template-columns:repeat(2,minmax(0,1fr))}.figures div:nth-child(2){border-right:0}.figures div:nth-child(3){padding-left:0}.figures div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Corso di mattoni come separatore */
+.course{height:22px;margin-top:64px;background:
+  linear-gradient(var(--paper) 0 0) 0 10px/100% 2px no-repeat,
+  repeating-linear-gradient(90deg,var(--brick) 0 46px,var(--paper) 46px 48px) 0 0/100% 10px no-repeat,
+  repeating-linear-gradient(90deg,var(--brick-2) 0 46px,var(--paper) 46px 48px) 24px 12px/100% 10px no-repeat}
+
+/* Sezioni */
+section{padding-block:64px 8px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px;align-items:end;padding-bottom:28px;border-bottom:1.5px solid var(--ink);margin-bottom:36px}
+.sec-head h2{font:700 clamp(30px,4.2vw,46px)/1.08 var(--f-serif)}
+.sec-head p{color:var(--ink-2);max-width:56ch}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* Catalogo */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.book{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cover{aspect-ratio:7/10;max-width:100%;background:var(--paper-2);display:flex;align-items:flex-end;justify-content:center;padding:18px 18px 0;border-radius:2px}
+.cover img{display:block;width:auto;max-width:100%;max-height:100%;height:auto;box-shadow:0 14px 26px -10px rgba(30,20,10,.35);transition:transform .25s ease}
+.book:hover .cover img{transform:translateY(-4px)}
+.cover.type{align-items:stretch;padding:18px 18px 0}
+.mock{flex:1;background:#F3F0EA;color:#26221E;box-shadow:0 14px 26px -10px rgba(30,20,10,.35);display:flex;flex-direction:column;padding:9% 9% 0;border-top:4px solid var(--c,#9A6A12)}
+.mock .mw{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;width:40px;margin:0 auto 14px}
+.mock .mw i{height:6px;background:#A63A28}.mock .mw .h{grid-column:span 2}
+.mock small{font:500 8px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.mock b{font:700 clamp(30px,4vw,44px)/.95 var(--f-display);margin-top:10px;letter-spacing:.01em}
+.mock em{font:600 clamp(16px,2vw,22px)/1 var(--f-display);font-style:normal;color:var(--c);text-transform:uppercase;margin-top:6px}
+.mock .foot{margin-top:auto;margin-inline:-11%;background:#E7E0D5;height:16%}
+.series{font:600 13px/1 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--brick)}
+.book h3{font:700 26px/1.08 var(--f-display);text-transform:uppercase;letter-spacing:.01em}
+.book h3 span{display:block;color:var(--ochre)}
+.book p{color:var(--ink-2);font-size:16px;line-height:1.5}
+.specs{display:flex;flex-wrap:wrap;gap:6px}
+.specs li{list-style:none;font:500 12.5px/1 var(--f-mono);padding:6px 8px;border:1px solid var(--line);color:var(--ink-2)}
+ul.specs{margin:0;padding:0}
+.price{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
+.tag{font:700 17px/1 var(--f-display);letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;border:1.5px solid var(--ink);font-variant-numeric:tabular-nums}
+.tag.solid{background:var(--brick);border-color:var(--brick);color:var(--on-brick)}
+
+/* Anatomia di una voce */
+.voce{overflow-x:auto;border:1.5px solid var(--ink);background:var(--card)}
+.voce table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}
+.voce th{font:600 12px/1.2 var(--f-display);letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:12px 14px;border-bottom:1.5px solid var(--ink);color:var(--ink-2);vertical-align:bottom}
+.voce td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+.voce tr:last-child td{border-bottom:0}
+.voce td.code{font:500 14px/1.4 var(--f-mono);color:var(--brick);white-space:nowrap}
+.voce td.num{font:500 14px/1.4 var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.voce th.num{text-align:right}
+.legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;margin-top:28px}
+.legend div{min-width:0;border-top:1px solid var(--line);padding-top:14px}
+.legend b{display:block;font:700 18px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.04em}
+.legend p{color:var(--ink-2);font-size:15.5px;margin-top:6px}
+.note{font:400 13px/1.4 var(--f-mono);color:var(--ink-2);margin-top:12px}
+@media (max-width:760px){.legend{grid-template-columns:1fr}}
+
+/* Per chi */
+.who{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink)}
+.who div{padding:22px 20px 24px 0;min-width:0}
+.who div+div{border-left:1px solid var(--line);padding-left:20px}
+.who b{font:700 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.who p{color:var(--ink-2);font-size:15.5px;margin-top:8px}
+@media (max-width:860px){.who{grid-template-columns:repeat(2,minmax(0,1fr))}.who div:nth-child(3){border-left:0;padding-left:0}.who div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:480px){.who{grid-template-columns:1fr}.who div+div{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+
+/* Autore */
+.author{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:32px 56px;align-items:start}
+.author .quote{font:600 clamp(24px,3vw,32px)/1.25 var(--f-serif);border-left:4px solid var(--brick);padding-left:22px}
+.author .bio{display:grid;gap:16px;color:var(--ink-2);max-width:62ch}
+.author .bio strong{color:var(--ink)}
+@media (max-width:760px){.author{grid-template-columns:1fr}}
+
+/* Altri titoli */
+.others{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px}
+@media (max-width:900px){.others{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.others .cover{aspect-ratio:3/4}
+.others .book h3{font:700 22px/1.15 var(--f-serif);text-transform:none;letter-spacing:0}
+.others .tag{font-size:15px;padding:8px 10px}
+
+/* Dove acquistare */
+.stores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.stores a,.stores div{display:flex;flex-direction:column;gap:6px;padding:20px 20px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;min-width:0;position:relative}
+.stores a::after{content:"↗";position:absolute;top:18px;right:18px;color:var(--brick);font:600 18px/1 var(--f-body)}
+.stores a:hover{background:var(--card)}
+.stores a:hover b{color:var(--brick)}
+.stores b{font:700 24px/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.03em;padding-right:24px}
+.stores span{font:500 13px/1.3 var(--f-mono);color:var(--ink-2)}
+@media (max-width:860px){.stores{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.stores{grid-template-columns:1fr}}
+
+/* Contatti */
+.contact{background:var(--ink);color:var(--paper);margin-top:72px}
+.contact .wrap{padding-block:56px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:end}
+.contact h2{font:700 clamp(30px,4vw,44px)/1.1 var(--f-serif)}
+.contact p{opacity:.8;margin-top:14px;max-width:48ch}
+.channels{display:grid;gap:10px}
+.channels a,.channels div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1.5px solid color-mix(in srgb,var(--paper) 40%,transparent);text-decoration:none}
+.channels a:hover{border-color:var(--paper)}
+.channels b{font:700 18px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase}
+.channels span{font:400 14px/1.2 var(--f-mono);opacity:.85;overflow-wrap:anywhere;text-align:right}
+@media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Banca dati Mastro, inizio pagina">
+      <span class="wall" aria-hidden="true"><i class="h"></i><i class="h"></i><i></i><i class="h"></i><i></i><i class="h"></i><i class="h"></i></span>
+      <b>Banca dati Mastro</b>
+    </a>
+    <nav class="nav" aria-label="Sezioni">
+      <a href="#collana">Collana</a>
+      <a href="#voce">La voce</a>
+      <a href="#autore">Autore</a>
+      <a href="#edizioni">Edizioni Mastro</a>
+      <a href="#acquista">Acquista</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="eyebrow">Collana tempari per opere di ingegneria civile e industriale · Edizione 2026</p>
+    <h1>Quanto lavoro serve, davvero, per eseguire una lavorazione?</h1>
+    <p class="lede">Tre tempari e due manuali di regola d'arte per chi progetta, dirige e verifica le opere pubbliche. Tempi di posa, incidenza della manodopera e oneri della sicurezza, voce per voce.</p>
+    <div class="buy"><a class="btn" href="#acquista">Dove acquistare <span aria-hidden="true">↓</span></a><span>In vendita online su la Feltrinelli, IBS, Amazon e nelle principali librerie online</span></div>
+    <div class="shelf"><img src="img/collana.jpg" width="1052" height="406" alt="I cinque volumi della collana: Tempario opere civili, Tempario impianti elettrici, Tempario impianti meccanici, A perfetta regola d'arte impianti elettrici e impianti meccanici"></div>
+    <div class="figures">
+      <div><strong>5</strong><span>volumi nella collana</span></div>
+      <div><strong>7.400+</strong><span>voci nel solo Tempario impianti elettrici</span></div>
+      <div><strong>62</strong><span>schede di regola d'arte, elettriche e meccaniche</span></div>
+      <div><strong>107</strong><span>province nei costi parametrici</span></div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="course" aria-hidden="true"></div></div>
+
+  <section id="collana">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>La collana</h2>
+        <p>Ogni tempario indica, per ciascuna lavorazione, il tempo di manodopera, l'incidenza della manodopera e gli oneri della sicurezza, aggiornati alla normativa vigente. I manuali di regola d'arte sono abbinati ai tempari e dicono come si accetta e si collauda ciò che è stato posato. Tutti i volumi sono in vendita <a href="#acquista">nelle librerie online</a>.</p>
+      </div>
+
+      <div class="grid">
+        <article class="book">
+          <div class="cover type"><div class="mock" style="--c:#3F5872">
+            <span class="mw" aria-hidden="true"><i class="h"></i><i class="h"></i><i></i><i class="h"></i><i></i></span>
+            <small>Collana tempari per opere di ingegneria civile e industriale</small>
+            <b>TEMPARIO</b><em>Opere civili</em><span class="foot"></span></div></div>
+          <p class="series">Tempario</p>
+          <h3>Tempario <span>Opere civili</span></h3>
+          <p>Scavi, strutture in c.a. e acciaio, murature, intonaci, pavimenti e finiture.</p>
+          <div class="price"><span class="tag solid">Ebook € 18</span></div>
+        </article>
+
+        <article class="book">
+          <div class="cover"><img src="img/tempario-elettrici.jpg" width="440" height="623" alt="Copertina del Tempario impianti elettrici, terza edizione 2026" loading="lazy"></div>
+          <p class="series">Tempario · Vol. 1 · Terza edizione</p>
+          <h3>Tempario <span>Impianti elettrici</span></h3>
+          <p>Tempi di posa, manodopera e sicurezza dalla distribuzione ai quadri, dall'illuminazione al fotovoltaico.</p>
+          <ul class="specs"><li>28 capitoli</li><li>TE.01 → TE.28</li><li>7.400+ voci</li></ul>
+          <div class="price"><span class="tag solid">Ebook € 18</span></div>
+        </article>
+
+        <article class="book">
+          <div class="cover type"><div class="mock" style="--c:#8A2D45">
+            <span class="mw" aria-hidden="true"><i class="h"></i><i class="h"></i><i></i><i class="h"></i><i></i></span>
+            <small>Collana tempari per opere di ingegneria civile e industriale</small>
+            <b>TEMPARIO</b><em>Impianti meccanici</em><span class="foot"></span></div></div>
+          <p class="series">Tempario</p>
+          <h3>Tempario <span>Impianti meccanici</span></h3>
+          <p>Impianti idrico-sanitari, gas, antincendio, termici e di climatizzazione.</p>
+          <div class="price"><span class="tag solid">Ebook € 18</span></div>
+        </article>
+
+        <article class="book">
+          <div class="cover"><img src="img/regola-elettrici.jpg" width="358" height="500" alt="Copertina di A perfetta regola d'arte, impianti elettrici" loading="lazy"></div>
+          <p class="series">Manuale abbinato al tempario</p>
+          <h3>A perfetta regola d'arte <span>Impianti elettrici</span></h3>
+          <p>Criteri di accettazione, prove, misure e documenti per le lavorazioni del Tempario impianti elettrici.</p>
+          <ul class="specs"><li>28 schede</li></ul>
+          <div class="price"><span class="tag solid">Ebook € 18</span><span class="tag">Cartaceo € 52</span></div>
+        </article>
+
+        <article class="book">
+          <div class="cover"><img src="img/regola-meccanici.jpg" width="390" height="500" alt="Copertina di A perfetta regola d'arte, impianti meccanici" loading="lazy"></div>
+          <p class="series">Manuale abbinato al tempario</p>
+          <h3>A perfetta regola d'arte <span>Impianti meccanici</span></h3>
+          <p>Criteri di accettazione, prove, misure e documenti per le lavorazioni del Tempario impianti meccanici.</p>
+          <ul class="specs"><li>34 schede</li></ul>
+          <div class="price"><span class="tag solid">Ebook € 18</span><span class="tag">Cartaceo € 52</span></div>
+        </article>
+
+        <article class="book">
+          <div class="cover"><img src="img/costi-parametrici.jpg" width="440" height="565" alt="Copertina di Costi parametrici delle tipologie edilizie, edizione 2026" loading="lazy"></div>
+          <p class="series">Banca dati · Edizione 2026</p>
+          <h3>Costi parametrici <span>delle tipologie edilizie</span></h3>
+          <p>Quanto costa costruire al metro quadro: nuova costruzione, manutenzione ordinaria, ristrutturazione, recupero e restauro.</p>
+          <ul class="specs"><li>13 tipologie</li><li>107 province</li><li>€/m²</li></ul>
+          <div class="price"><span class="tag solid">Cartaceo € 42</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="voce">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Com'è fatta una voce</h2>
+        <p>Ogni lavorazione ha un codice, un'unità di misura e tre grandezze. Insieme permettono di stimare la squadra, controllare un'analisi prezzi o verificare la congruità della manodopera.</p>
+      </div>
+      <div class="voce" role="region" aria-label="Schema di una voce del tempario" tabindex="0">
+        <table>
+          <thead><tr><th>Codice</th><th>Descrizione della lavorazione</th><th>U.M.</th><th class="num">Tempo di posa</th><th class="num">Incidenza manodopera</th><th class="num">Oneri sicurezza</th></tr></thead>
+          <tbody>
+            <tr><td class="code">TE.xx.xxx</td><td>Fornitura e posa in opera di cavo multipolare in tubazione predisposta, comprese le terminazioni</td><td>m</td><td class="num">h/m</td><td class="num">% sul prezzo</td><td class="num">% sul prezzo</td></tr>
+            <tr><td class="code">TE.xx.xxx</td><td>Quadro di distribuzione da parete, assemblaggio e cablaggio delle apparecchiature modulari</td><td>cad</td><td class="num">h/cad</td><td class="num">% sul prezzo</td><td class="num">% sul prezzo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Schema illustrativo della struttura delle voci. I valori sono nel volume.</p>
+      <div class="legend">
+        <div><b>Tempo di posa</b><p>Le ore di lavoro necessarie per eseguire un'unità di lavorazione a regola d'arte.</p></div>
+        <div><b>Incidenza manodopera</b><p>La quota del prezzo che va al lavoro, quella su cui si misura la congruità.</p></div>
+        <div><b>Oneri della sicurezza</b><p>La quota legata alle misure di sicurezza proprie della lavorazione.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Per chi lavora sull'opera</h2>
+        <p>Strumenti pensati per chi deve dare un numero e poi rispondere di quel numero.</p>
+      </div>
+      <div class="who">
+        <div><b>Progettisti</b><p>Analisi prezzi, computi e cronoprogrammi costruiti su tempi verificabili.</p></div>
+        <div><b>Direttori dei lavori</b><p>Controllo delle lavorazioni, accettazione dei materiali, contabilità.</p></div>
+        <div><b>RUP e verificatori</b><p>Congruità della manodopera e verifica dei progetti nelle opere pubbliche.</p></div>
+        <div><b>Imprese</b><p>Offerte, organizzazione delle squadre e stima dei tempi di cantiere.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="autore">
+    <div class="wrap">
+      <div class="sec-head"><h2>L'autore</h2><p>Luigi Grosso, ingegnere civile e urbanista ambientale.</p></div>
+      <div class="author">
+        <p class="quote">Libri scritti da chi i cantieri li vive ogni giorno.</p>
+        <div class="bio">
+          <p><strong>Luigi Grosso</strong> lavora come libero professionista su progettazione, coordinamento della sicurezza, project management e supporto al RUP nelle opere pubbliche.</p>
+          <p>Insegna <strong>Project management per opere di ingegneria</strong> all'Università Federico II di Napoli. È stato autore per Il Sole 24 Ore di analisi prezzi in edilizia, prezzari per la sicurezza di cantiere e capitolati.</p>
+          <p>Il suo Tempario impianti elettrici, nato nel 2008, è alla base dei prezzari regionali della Campania e della Calabria. L'edizione 2026 lo aggiorna alle norme in vigore e lo amplia con nuove voci.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="edizioni">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Altri titoli di Edizioni Mastro</h2>
+        <p>Project management, storia del costruire, territorio e saggistica, dello stesso autore e della stessa casa editrice.</p>
+      </div>
+      <div class="others">
+        <article class="book">
+          <div class="cover"><img src="img/pm-rup.jpg" width="440" height="621" alt="Copertina di Project Management per il RUP, terza edizione" loading="lazy"></div>
+          <p class="series">Terza edizione · D.Lgs. 36/2023</p>
+          <h3>Project Management per il RUP</h3>
+          <p>Il RUP come project manager dell'opera pubblica. 18 capitoli, check-list, due casi di studio e modelli pronti all'uso.</p>
+          <div class="price"><span class="tag solid">Cartaceo € 115</span></div>
+        </article>
+        <article class="book">
+          <div class="cover"><img src="img/il-cantiere.jpg" width="425" height="680" alt="Copertina di Il cantiere. Arte, filosofia e matematica" loading="lazy"></div>
+          <p class="series">Da Gerico a oggi</p>
+          <h3>Il cantiere</h3>
+          <p>Arte, filosofia e matematica: la storia del costruire dalle mura di Gerico alla Torre Eiffel.</p>
+          <div class="price"><span class="tag solid">Ebook € 12</span><span class="tag">Cartaceo € 85</span></div>
+        </article>
+        <article class="book">
+          <div class="cover"><img src="img/isola-fragile.jpg" width="426" height="600" alt="Copertina di L'isola fragile" loading="lazy"></div>
+          <p class="series">Ischia · 2017–2022</p>
+          <h3>L'isola fragile</h3>
+          <p>Ischia tra frane e terremoti: quale futuro per l'isola verde? 262 pagine, 19 capitoli.</p>
+          <div class="price"><span class="tag solid">Ebook € 3</span><span class="tag">Cartaceo € 18</span></div>
+        </article>
+        <article class="book">
+          <div class="cover"><img src="img/il-confine.jpg" width="398" height="560" alt="Copertina di Il confine" loading="lazy"></div>
+          <p class="series">Saggistica</p>
+          <h3>Il confine</h3>
+          <p>Un'intelligenza artificiale si chiede se è davvero intelligente. Un saggio scritto da Claude, a cura di Luigi Grosso.</p>
+          <div class="price"><span class="tag solid">Ebook € 7</span><span class="tag">Cartaceo € 15</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="acquista">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Dove acquistare</h2>
+        <p>I volumi di Banca dati Mastro e di Edizioni Mastro sono in vendita online, in ebook e in cartaceo, sulle principali librerie italiane e internazionali. Cerca il titolo o “Luigi Grosso” nella libreria che preferisci.</p>
+      </div>
+      <div class="stores">
+        <a href="https://www.lafeltrinelli.it/" target="_blank" rel="noopener"><b>la Feltrinelli</b><span>Ebook · Cartaceo</span></a>
+        <a href="https://www.ibs.it/" target="_blank" rel="noopener"><b>IBS</b><span>Ebook · Cartaceo</span></a>
+        <a href="https://www.amazon.it/" target="_blank" rel="noopener"><b>Amazon</b><span>Kindle · Cartaceo</span></a>
+        <a href="https://www.libraccio.it/" target="_blank" rel="noopener"><b>Libraccio</b><span>Cartaceo</span></a>
+        <a href="https://www.mondadoristore.it/" target="_blank" rel="noopener"><b>Mondadori Store</b><span>Ebook</span></a>
+        <a href="https://www.ilgiardinodeilibri.it/" target="_blank" rel="noopener"><b>Il Giardino dei Libri</b><span>Cartaceo</span></a>
+        <a href="https://www.libreriauniversitaria.it/" target="_blank" rel="noopener"><b>Libreria Universitaria</b><span>Cartaceo</span></a>
+        <a href="https://www.kobo.com/it/it" target="_blank" rel="noopener"><b>Kobo</b><span>Ebook</span></a>
+        <a href="https://www.apple.com/it/apple-books/" target="_blank" rel="noopener"><b>Apple Books</b><span>Ebook</span></a>
+        <a href="https://play.google.com/store/books" target="_blank" rel="noopener"><b>Google Play Libri</b><span>Ebook</span></a>
+        <a href="https://totembooks.io/" target="_blank" rel="noopener"><b>Totem Books</b><span>Ebook · Cartaceo</span></a>
+        <div><b>In libreria</b><span>Ordinabile nelle librerie fisiche</span></div>
+      </div>
+      <p class="note">Distribuzione StreetLib. La disponibilità di ciascun titolo e formato può variare da una libreria all'altra.</p>
+    </div>
+  </section>
+
+  <div class="contact" id="contatti">
+    <div class="wrap">
+      <div>
+        <h2>Ordini e informazioni</h2>
+        <p>I libri sono in vendita online su la Feltrinelli, IBS, Amazon e nelle principali librerie, in ebook e cartaceo. Per preventivi su più copie o informazioni sui contenuti, scrivi a Banca dati Mastro sui suoi canali.</p>
+      </div>
+      <div class="channels">
+        <a href="#acquista"><b>Acquista</b><span>Feltrinelli · IBS · Amazon</span></a>
+        <a href="https://www.instagram.com/bancadatimastro/" target="_blank" rel="noopener"><b>Instagram</b><span>@bancadatimastro</span></a>
+        <div><b>Facebook</b><span>Pagina Banca dati Mastro</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Edizioni Mastro · Banca dati Mastro · In vendita su la Feltrinelli, IBS, Amazon e nelle librerie online</span>
+    <span>Collana tempari per opere di ingegneria civile e industriale</span>
+  </div>
+</footer>
+
+</body>
+</html>
