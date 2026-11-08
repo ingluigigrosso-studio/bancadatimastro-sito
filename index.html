@@ -179,6 +179,35 @@ ul.specs{margin:0;padding:0}
 .channels span{font:400 14px/1.2 var(--f-mono);opacity:.85;overflow-wrap:anywhere;text-align:right}
 @media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
 footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+/* Logo */
+.logo-svg{display:block;height:auto;flex:none}
+/* Chi siamo */
+#chi-siamo{scroll-margin-top:90px}
+.chi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:32px 56px;align-items:start}
+.chi-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);background:var(--card);border:1.5px solid var(--ink);padding:26px 24px;display:grid;gap:18px;min-width:0}
+.chi-col h3{font:700 26px/1.15 var(--f-serif)}
+.chi-col p{color:var(--ink-2);font-size:16px}
+.chi-col .eyebrow{color:var(--brick)}
+.chi-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1.5px solid var(--ink);margin:0}
+.chi-figs div{padding:14px 12px 6px 0;min-width:0}
+.chi-figs dt,.chi-figs dd{margin:0}
+.chi-figs strong{display:block;font:700 32px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.chi-figs span{display:block;font-size:14px;line-height:1.3;color:var(--ink-2);margin-top:5px}
+.chi-refs h4{font:700 15px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+.chi-refs ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.chi-refs li{font-size:14.5px;line-height:1.45;color:var(--ink-2);border-left:3px solid var(--brick);padding-left:12px}
+.chi-refs li b{display:block;font:500 12.5px/1.4 var(--f-mono);color:var(--brick)}
+.tappe{display:grid;min-width:0}
+.tappa{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 28px;padding-block:24px;border-top:1px solid var(--line)}
+.tappa:first-child{border-top:0;padding-top:0}
+.tappa .anno{font:500 13.5px/1.4 var(--f-mono);color:var(--brick);padding-top:5px}
+.tappa h3{font:700 25px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.tappa p{color:var(--ink-2);margin-top:10px;max-width:64ch}
+.tappa p.vol{background:var(--paper-2);color:var(--ink);padding:12px 14px;font-size:15.5px}
+.tappa p.vol span{font:500 13.5px/1.4 var(--f-mono)}
+@media (max-width:860px){.chi{grid-template-columns:1fr}.chi-col{position:static}}
+@media (max-width:560px){.tappa{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -186,12 +215,13 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Banca dati Mastro, inizio pagina">
-      <span class="wall" aria-hidden="true"><i class="h"></i><i class="h"></i><i></i><i class="h"></i><i></i><i class="h"></i><i class="h"></i></span>
+      <svg class="logo-svg" width="48" viewBox="0 0 813 449" aria-hidden="true"><path d="M4 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9E3620"/><rect x="283" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 116h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="123" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="421" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 116h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#B14E36"/><rect x="697" y="123" width="109" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="283" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 348h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="355" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="421" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 348h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#9C3520"/><rect x="697" y="355" width="109" height="8" fill="#ffffff" fill-opacity=".12"/></svg>
       <b>Banca dati Mastro</b>
     </a>
     <nav class="nav" aria-label="Sezioni">
       <a href="#collana">Collana</a>
       <a href="#voce">La voce</a>
+      <a href="#chi-siamo">Chi siamo</a>
       <a href="#autore">Autore</a>
       <a href="#edizioni">Edizioni Mastro</a>
       <a href="#acquista">Acquista</a>
@@ -321,6 +351,41 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
         <div><b>Direttori dei lavori</b><p>Controllo delle lavorazioni, accettazione dei materiali, contabilità.</p></div>
         <div><b>RUP e verificatori</b><p>Congruità della manodopera e verifica dei progetti nelle opere pubbliche.</p></div>
         <div><b>Imprese</b><p>Offerte, organizzazione delle squadre e stima dei tempi di cantiere.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chi-siamo">
+    <div class="wrap">
+      <div class="sec-head"><h2>Chi siamo</h2><p>Dal 1994 i dati di mercato per l'edilizia italiana: la storia di Banca dati Mastro e del suo fondatore, Luigi Grosso.</p></div>
+      <div class="chi">
+        <aside class="chi-col" aria-label="Chi siamo in sintesi">
+          <svg class="logo-svg" width="140" viewBox="0 0 813 449" role="img" aria-label="Logo Banca dati Mastro"><path d="M4 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9E3620"/><rect x="283" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 116h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="123" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="421" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 116h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#B14E36"/><rect x="697" y="123" width="109" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="283" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 348h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="355" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="421" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 348h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#9C3520"/><rect x="697" y="355" width="109" height="8" fill="#ffffff" fill-opacity=".12"/></svg>
+          <p class="eyebrow">Chi siamo</p>
+          <h3>Trent'anni di prezzi e analisi per le costruzioni</h3>
+          <p>Banca dati Mastro nasce nel 1994 dall'esperienza di Luigi Grosso, oggi ingegnere civile e docente di Project Management all'Università Federico II di Napoli, e di MASTRO S.r.l., società di servizi informatici per l'edilizia nata a Napoli. Dal 1998 al fianco del Sole 24 Ore, oggi torna con le Edizioni Mastro.</p>
+          <dl class="chi-figs">
+            <div><dt><strong>36.000</strong></dt><dd><span>voci composte</span></dd></div>
+            <div><dt><strong>400.000</strong></dt><dd><span>elementi tra materiali e specifiche</span></dd></div>
+            <div><dt><strong>120.000</strong></dt><dd><span>licenze d'uso sul mercato nazionale</span></dd></div>
+            <div><dt><strong>70%</strong></dt><dd><span>dei prezzari regionali con dati Mastro</span></dd></div>
+          </dl>
+          <div class="chi-refs"><h4>Principali referenze</h4><ul>
+            <li><b>1997</b>Deposito della Banca dati Mastro presso il Consiglio Superiore dei Lavori Pubblici, Roma.</li>
+            <li><b>1997</b>Deposito dello studio “Codifica strutturata” nel progetto “Applicazioni informatiche per la gestione delle opere pubbliche”, gruppo di lavoro presso il Consiglio Superiore dei Lavori Pubblici.</li>
+            <li><b>Dal 1994</b>Circa 120.000 licenze d'uso fornite sul mercato nazionale.</li>
+            <li><b>Prezzari regionali</b>Dati forniti a circa il 70% dei prezzari regionali italiani.</li>
+          </ul></div>
+        </aside>
+        <div class="tappe">
+          <article class="tappa"><p class="anno">1975 – anni ’80</p><div><h3>Le origini</h3><p>Luigi Grosso, classe 1956, si diploma geometra nel 1975 e si iscrive a Geologia all'Università Federico II di Napoli, ma sceglie presto il lavoro in un'impresa di costruzioni. Appassionato di elettronica, si forma sull'informatica prima su un Commodore CBM 3032 e poi, nei primi anni '80, su un NCR 8086 IBM compatibile.</p><p>Assunto da una grande impresa di rilievo nazionale, affianca al cantiere lo studio della contabilità industriale, fino a organizzare e dirigere il centro di contabilità industriale dell'azienda.</p></div></article>
+          <article class="tappa"><p class="anno">anni ’80 – ’90</p><div><h3>Da CEDE a MASTRO S.r.l.</h3><p>La richiesta di quegli strumenti cresce anche fuori dall'impresa. Luigi Grosso lascia il lavoro dipendente e fonda la CEDE, Centro Elaborazione Dati per l'Edilizia, che in pochi anni apre una sede a Bologna e amplia quella di Napoli fino a circa 15 dipendenti e 6 consulenti. La CEDE diventa ben presto MASTRO S.r.l., punto di riferimento per molte imprese di primaria importanza nazionale.</p><p>A Bologna arriva l'incarico di pianificare una commessa estera, per conto di un gruppo italiano, con contratto e capitolato NATO: un banco di prova decisivo per il controllo di gestione e le tecniche di project management. Negli anni '90 MASTRO lavora con committenti come Metropolitana Milanese, Politecnico di Milano, Comune di Napoli, Regione Basilicata, Regione Campania e Regione Calabria.</p></div></article>
+          <article class="tappa"><p class="anno">17.02.1992</p><div><h3>La svolta</h3><p>Il 17 febbraio 1992 inizia l'inchiesta Mani Pulite. Il mercato si ferma, le commesse si bloccano e nel giro di un anno MASTRO chiude la sede di Bologna e ridimensiona quella di Napoli. Ma i server sono pieni di dati, materiali e informazioni di mercato. Con i pochi collaboratori rimasti nasce un progetto nuovo, pensato per le esigenze di trasparenza del dopo Tangentopoli: la Banca dati Mastro.</p></div></article>
+          <article class="tappa"><p class="anno">1994</p><div><h3>La Banca dati Mastro</h3><p>Un database relazionale di prezzi di mercato e analisi di opere specialistiche per l'edilizia. Debutta al SAIE di Bologna, affiancato da un archivio informatico realizzato con STR S.r.l. di Pegognaga (MN), oggi TeamSystem, allora leader nel software per cantieri e appalti.</p><p class="vol">Il primo volume: <span>210 × 290 mm · dorso 130 mm · 4 kg</span>, con dati e analisi per 1.400 categorie di opere specialistiche.</p><p>Il primo cliente è l'Acquedotto Pugliese; seguono numerose imprese ed enti. La banca dati cresce fino a 36.000 voci composte da circa 400.000 elementi, tra materiali e specifiche civili, industriali e impiantistiche. MASTRO sviluppa intanto tecnologie avanzate di gestione dei dati e una sezione dedicata alla fotogrammetria terrestre.</p></div></article>
+          <article class="tappa"><p class="anno">1998</p><div><h3>Con Il Sole 24 Ore</h3><p>Grazie a un accordo con Il Sole 24 Ore nasce la collana <i>Analisi &amp; Prezzi in edilizia</i>, insieme ai Tempari, alle collane Capitolati e Codici e a molte altre pubblicazioni.</p></div></article>
+          <article class="tappa"><p class="anno">anni ’90 – oggi</p><div><h3>Studio e docenza</h3><p>Accanto al lavoro, Luigi Grosso riprende gli studi da studente lavoratore. Negli anni '90 si laurea con il massimo dei voti in Pianificazione territoriale, urbanistica e ambientale, con uno studio sul monitoraggio delle frane elaborato con il CNR di Rende (CS); consegue poi anche la laurea in Ingegneria civile. Completa la formazione manageriale con il corso GEPROPI all'Università Bocconi di Milano, l'XI edizione dell'Executive MBA dell'Università di Bologna – Alma Mater Studiorum e il Master in Project Management dell'Università Suor Orsola Benincasa di Napoli.</p><p>Oggi è direttore delle Edizioni Mastro e coordina il gruppo tecnico di sviluppo della Banca dati Mastro. È inoltre docente a contratto di Project Management per le opere civili all'Università Federico II di Napoli, cultore della materia in Comunicazione all'Università Suor Orsola Benincasa e tiene corsi su gestione delle opere di ingegneria, sicurezza e controllo di gestione presso università, pubbliche amministrazioni e istituti.</p></div></article>
+          <article class="tappa"><p class="anno">oggi</p><div><h3>Edizioni Mastro</h3><p>MASTRO torna a pubblicare in proprio per l'edilizia e il management, in una veste moderna e aggiornata, insieme ai centri di ricerca, alle università e agli enti pubblici con cui ha sempre collaborato.</p></div></article>
+        </div>
       </div>
     </div>
   </section>
