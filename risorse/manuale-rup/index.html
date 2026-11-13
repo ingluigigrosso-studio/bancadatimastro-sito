@@ -11,7 +11,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+.tabs{display:flex;gap:0;border-bottom:1.5px solid var(--ink)}
+.tabs button{font:700 15px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;background:none;border:0;padding:12px 16px;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1.5px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brick)}
+form{display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:14px;color:var(--ink-2)}
+input[type=text],input[type=email],input[type=password]{font:400 17px/1.3 var(--f-body);padding:11px 12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:2px;width:100%}
+input:focus-visible{outline:2px solid var(--brick);outline-offset:1px;border-color:var(--brick)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--brick);flex:none}
+.btn{font:700 17px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;background:var(--brick);color:var(--on-brick);border:0;padding:14px 18px;cursor:pointer;justify-self:start}
+.btn:hover{background:var(--brick-2)} .btn[disabled]{opacity:.6;cursor:wait}
+.link{background:none;border:0;padding:0;color:var(--brick);text-decoration:underline;cursor:pointer;font:inherit;justify-self:start}
+.msg{min-height:1.2em;font-size:15px;margin:0}
+.msg[data-kind="err"]{color:#B3261E} .msg[data-kind="ok"]{color:#1E6B3A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .msg[data-kind="err"]{color:#F2B8B5} :root:not([data-theme="light"]) .msg[data-kind="ok"]{color:#8BD3A5}}
+.who{font-size:14px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.files{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.files li{display:grid;gap:2px;border-top:1px solid var(--line);padding-top:10px}
+.files a{font:700 18px/1.25 var(--f-display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.files a::after{content:" ↓";color:var(--brick)}
+.files span{font-size:14.5px;color:var(--ink-2)}
+code.cod{font:500 15px/1 var(--f-mono);background:var(--paper-2);padding:3px 6px}
+[hidden]{display:none!important}
+</style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,20 +86,71 @@ a{color:var(--brick)}
 <main class="wrap">
   <p class="eyebrow">Materiali del volume</p>
   <h1>Manuale operativo per il RUP</h1>
-  <p>Questa è la pagina dei materiali riservati a chi ha acquistato il volume: modelli, file e allegati da scaricare e usare nel lavoro.</p>
-  <section class="box" aria-labelledby="come">
-    <span class="state">Area in preparazione</span>
-    <h2 id="come">Come si accede</h2>
-    <ol>
-      <li>Registrati con nome, cognome ed email.</li>
-      <li>Conferma l'indirizzo email con il link che ti arriva.</li>
-      <li>Inserisci il codice riportato nel volume.</li>
-      <li>Scarica i materiali.</li>
-    </ol>
-    <p>La registrazione sarà attiva a breve su questa stessa pagina: il codice QR stampato nel libro resterà valido.</p>
-  </section>
+  <p>Modelli, file e allegati del volume, riservati a chi lo ha acquistato. Registrati, conferma la tua email e inserisci il codice che trovi nel libro.</p>
+
+  <div id="area" data-volume="manuale-rup">
+    <section class="box" id="v-carica"><p>Caricamento…</p></section>
+
+    <section class="box" id="v-entra" hidden>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" data-tab="registra" aria-selected="true">Registrati</button>
+        <button type="button" role="tab" data-tab="accedi" aria-selected="false">Accedi</button>
+      </div>
+      <form id="f-registra" novalidate>
+        <div class="row">
+          <label>Nome<input type="text" name="nome" id="r-nome" autocomplete="given-name" required></label>
+          <label>Cognome<input type="text" name="cognome" id="r-cognome" autocomplete="family-name" required></label>
+        </div>
+        <label>Email<input type="email" name="email" id="r-email" autocomplete="email" required></label>
+        <div class="row">
+          <label>Password (almeno 8 caratteri)<input type="password" name="password" id="r-password" autocomplete="new-password" minlength="8" required></label>
+          <label>Ripeti la password<input type="password" name="password2" id="r-password2" autocomplete="new-password" required></label>
+        </div>
+        <label class="check"><input type="checkbox" name="privacy" id="r-privacy" required><span>Ho letto l'<a href="/privacy/" target="_blank" rel="noopener">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per l'accesso ai materiali.</span></label>
+        <label class="check"><input type="checkbox" name="newsletter" id="r-newsletter"><span>Facoltativo: desidero ricevere notizie su nuovi volumi e aggiornamenti di Edizioni Mastro.</span></label>
+        <button class="btn" type="submit">Registrati</button>
+        <p class="msg" id="m-registra" role="status"></p>
+      </form>
+      <form id="f-accedi" hidden novalidate>
+        <label>Email<input type="email" name="email" id="a-email" autocomplete="email" required></label>
+        <label>Password<input type="password" name="password" id="a-password" autocomplete="current-password" required></label>
+        <button class="btn" type="submit">Accedi</button>
+        <button class="link" type="button" id="b-reset">Password dimenticata</button>
+        <p class="msg" id="m-accedi" role="status"></p>
+      </form>
+    </section>
+
+    <section class="box" id="v-verifica" hidden>
+      <h2>Conferma la tua email</h2>
+      <p>Ti abbiamo inviato un messaggio all'indirizzo <strong data-utente></strong>. Apri il link contenuto nell'email, poi torna qui e premi «Ho confermato». Se non lo trovi, guarda nella posta indesiderata.</p>
+      <button class="btn" type="button" id="b-confermato">Ho confermato</button>
+      <button class="link" type="button" id="b-reinvia">Invia di nuovo l'email</button>
+      <p class="msg" id="m-verifica" role="status"></p>
+      <p class="who">Collegato come <span data-utente></span> <button class="link" type="button" data-esci>Esci</button></p>
+    </section>
+
+    <section class="box" id="v-codice" hidden>
+      <h2>Inserisci il codice del volume</h2>
+      <p>Il codice è stampato all'interno del libro, accanto al codice QR.</p>
+      <form id="f-codice" novalidate>
+        <label>Codice<input type="text" name="codice" id="c-codice" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ES. ABCD-1234" required></label>
+        <button class="btn" type="submit">Sblocca i materiali</button>
+        <p class="msg" id="m-codice" role="status"></p>
+      </form>
+      <p class="who">Collegato come <span data-utente></span> <button class="link" type="button" data-esci>Esci</button></p>
+    </section>
+
+    <section class="box" id="v-file" hidden>
+      <h2>Materiali da scaricare</h2>
+      <p id="nessun-file" hidden>I materiali di questo volume saranno disponibili a breve. Torna su questa pagina nei prossimi giorni: resterai collegato.</p>
+      <ul class="files" id="lista-file"></ul>
+      <p class="who">Collegato come <span data-utente></span> <button class="link" type="button" data-esci>Esci</button></p>
+    </section>
+  </div>
+
   <p>Hai bisogno di aiuto? Torna a <a href="https://bancadatimastro.it/#contatti">Banca dati Mastro</a>.</p>
 </main>
 <footer><div class="wrap">© 2026 Edizioni Mastro · Banca dati Mastro</div></footer>
+<script type="module" src="/risorse/area.js"></script>
 </body>
 </html>
