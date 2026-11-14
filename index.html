@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Banca dati Mastro</title>
-<meta name="description" content="Banca dati Mastro: tempari, manuali di regola d'arte e costi parametrici per opere di ingegneria civile e industriale. In vendita su la Feltrinelli, IBS, Amazon e nelle librerie online.">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-
+<meta name="description" content="Edizioni Mastro e Banca dati Mastro: tempari, manuali tecnici, project management e saggistica di Luigi Grosso per l&#x27;ingegneria e le opere pubbliche. Dal 1994.">
+<link rel="canonical" href="https://bancadatimastro.it/">
+<link rel="icon" href="/img/logo.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Banca dati Mastro"><meta property="og:title" content="Banca dati Mastro"><meta property="og:description" content="Edizioni Mastro e Banca dati Mastro: tempari, manuali tecnici, project management e saggistica di Luigi Grosso per l&#x27;ingegneria e le opere pubbliche. Dal 1994."><meta property="og:url" content="https://bancadatimastro.it/"><meta property="og:image" content="https://bancadatimastro.it/img/collana.jpg"><meta property="og:locale" content="it_IT">
+<meta name="author" content="Luigi Grosso">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <style>
 /* Layout: catalogo editoriale a griglia, scandito da corsi di mattoni come i volumi della collana */
 :root{
@@ -208,18 +211,54 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 .tappa p.vol span{font:500 13.5px/1.4 var(--f-mono)}
 @media (max-width:860px){.chi{grid-template-columns:1fr}.chi-col{position:static}}
 @media (max-width:560px){.tappa{grid-template-columns:1fr}}
-</style>
 
-<link rel="canonical" href="https://bancadatimastro.it/">
-<link rel="icon" href="img/logo.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Banca dati Mastro">
-<meta property="og:title" content="Banca dati Mastro">
-<meta property="og:description" content="Banca dati Mastro: dal 1994 prezzi, analisi e tempari per le opere di ingegneria civile e industriale. Collana di Edizioni Mastro, fondata da Luigi Grosso.">
-<meta property="og:url" content="https://bancadatimastro.it/">
-<meta property="og:image" content="https://bancadatimastro.it/img/collana.jpg">
-<meta property="og:locale" content="it_IT">
-<meta name="author" content="Luigi Grosso">
+/* Pagine interne e mappa */
+.nav a[aria-current="page"]{color:var(--brick)}
+.page-hero{padding-block:48px 8px}
+.page-hero h1{font:700 clamp(34px,5vw,56px)/1.06 var(--f-serif);margin-top:14px;max-width:20ch}
+.page-hero .lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);margin-top:16px;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips a{font:600 14px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);padding:9px 12px}
+.chips a:hover{background:var(--ink);color:var(--paper)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+section.coll{scroll-margin-top:90px}
+.coll .count{font:500 13px/1 var(--f-mono);color:var(--ink-2);margin-top:10px;display:block}
+.cover img[src^="https://www.ibs.it"]{background:var(--paper-2)}
+/* Mappa a mattoni */
+.map{display:grid;gap:10px;margin-top:8px}
+.map .row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.map .row.off{grid-template-columns:.5fr repeat(5,minmax(0,1fr)) .5fr}
+.map .half{background:var(--paper-2);border-radius:2px}
+.brick{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:128px;padding:16px 18px;text-decoration:none;color:var(--on-brick);background:var(--brick);border-radius:2px;position:relative;box-shadow:inset 0 6px 0 rgba(255,255,255,.10);transition:transform .15s ease,background .15s ease;min-width:0}
+.brick:nth-child(3n+2){background:color-mix(in srgb,var(--brick) 86%,#000)}
+.brick:nth-child(3n){background:var(--brick-2)}
+.brick:hover{transform:translateY(-3px)}
+.brick b{font:700 clamp(19px,2.1vw,24px)/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.brick span{font-size:14.5px;line-height:1.35;opacity:.92}
+.brick em{font:500 12.5px/1 var(--f-mono);font-style:normal;opacity:.85}
+.brick.dark{background:var(--ink);color:var(--paper)}
+.map .row.off .brick{grid-column:span 1}
+@media (max-width:860px){.map .row,.map .row.off{grid-template-columns:repeat(2,minmax(0,1fr))}.map .half{display:none}.brick,.map .row.off .brick{grid-column:span 1}}
+@media (max-width:480px){.map .row,.map .row.off{grid-template-columns:1fr}.map .row.off{padding-left:18px}}
+.newest{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px}
+@media (max-width:860px){.newest{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.newest{grid-template-columns:1fr}}
+.book h3,.brick b{hyphens:auto;overflow-wrap:break-word}
+.map .row.off .brick b{font-size:clamp(16px,1.55vw,20px)}
+.map .row.off .brick span{font-size:13.5px}
+.mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.mat a{display:flex;flex-direction:column;gap:8px;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;min-width:0}
+.mat a:hover{background:var(--card)}
+.mat b{font:700 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.mat span{font:500 13px/1.3 var(--f-mono);color:var(--brick)}
+@media (max-width:860px){.mat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.mat{grid-template-columns:1fr}}
+.mailbox{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mailbox code{font:500 17px/1.3 var(--f-mono);user-select:all;overflow-wrap:anywhere}
+.copy{font:600 13px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid currentColor;color:inherit;padding:7px 10px;cursor:pointer}
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -574,333 +613,89 @@ footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:1
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Banca dati Mastro, inizio pagina">
+    <a class="brand" href="/" aria-label="Banca dati Mastro, pagina iniziale">
       <svg class="logo-svg" width="48" viewBox="0 0 813 449" aria-hidden="true"><path d="M4 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9E3620"/><rect x="283" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 116h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="123" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="421" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 116h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#B14E36"/><rect x="697" y="123" width="109" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="283" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 348h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="355" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="421" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 348h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#9C3520"/><rect x="697" y="355" width="109" height="8" fill="#ffffff" fill-opacity=".12"/></svg>
       <b>Banca dati Mastro</b>
     </a>
-    <nav class="nav" aria-label="Sezioni">
-      <a href="#collana">Collana</a>
-      <a href="#voce">La voce</a>
-      <a href="#chi-siamo">Chi siamo</a>
-      <a href="#autore">Autore</a>
-      <a href="#edizioni">Edizioni Mastro</a>
-      <a href="#acquista">Acquista</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
+    <nav class="nav" aria-label="Pagine del sito"><a href="/catalogo/">Catalogo</a><a href="/collana-tempari/">Collana tempari</a><a href="/materiali/">Materiali</a><a href="/chi-siamo/">Chi siamo</a><a href="/acquista/">Acquista</a><a href="/contatti/">Contatti</a></nav>
   </div>
 </header>
-
 <main id="top">
   <div class="wrap hero">
-    <p class="eyebrow">Collana tempari per opere di ingegneria civile e industriale · Edizione 2026</p>
-    <h1>Quanto lavoro serve, davvero, per eseguire una lavorazione?</h1>
-    <p class="lede">Tre tempari e due manuali di regola d'arte per chi progetta, dirige e verifica le opere pubbliche. Tempi di posa, incidenza della manodopera e oneri della sicurezza, voce per voce.</p>
-    <div class="buy"><a class="btn" href="#acquista">Dove acquistare <span aria-hidden="true">↓</span></a><span>In vendita online su la Feltrinelli, IBS, Amazon e nelle principali librerie online</span></div>
-    <div class="shelf"><img src="img/collana.jpg" width="1052" height="406" alt="I cinque volumi della collana: Tempario opere civili, Tempario impianti elettrici, Tempario impianti meccanici, A perfetta regola d'arte impianti elettrici e impianti meccanici"></div>
+    <p class="eyebrow">Edizioni Mastro · Banca dati Mastro · dal 1994</p>
+    <h1>Libri e strumenti per chi progetta, costruisce e governa le opere.</h1>
+    <p class="lede">Dal 1994 la Banca dati Mastro raccoglie prezzi, analisi e tempi di lavoro dell'edilizia italiana. Oggi Edizioni Mastro pubblica tempari, manuali tecnici, project management e saggistica di Luigi Grosso, in cartaceo ed ebook.</p>
+    <div class="btns"><a class="btn" href="/catalogo/">Sfoglia il catalogo</a><a class="btn ghost" href="/materiali/">Materiali dei volumi</a></div>
     <div class="figures">
-      <div><strong>5</strong><span>volumi nella collana</span></div>
+      <div><strong>19</strong><span>volumi pubblicati da Edizioni Mastro</span></div>
+      <div><strong>1994</strong><span>nasce la Banca dati Mastro</span></div>
       <div><strong>7.400+</strong><span>voci nel solo Tempario impianti elettrici</span></div>
-      <div><strong>62</strong><span>schede di regola d'arte, elettriche e meccaniche</span></div>
       <div><strong>107</strong><span>province nei costi parametrici</span></div>
     </div>
   </div>
-
   <div class="wrap"><div class="course" aria-hidden="true"></div></div>
-
-  <section id="collana">
+  <section id="mappa">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>La collana</h2>
-        <p>Ogni tempario indica, per ciascuna lavorazione, il tempo di manodopera, l'incidenza della manodopera e gli oneri della sicurezza, aggiornati alla normativa vigente. I manuali di regola d'arte sono abbinati ai tempari e dicono come si accetta e si collauda ciò che è stato posato. Tutti i volumi sono in vendita <a href="#acquista">nelle librerie online</a>.</p>
-      </div>
-
-      <div class="grid">
-        <article class="book">
-          <div class="cover"><img src="img/tempario-civili.jpg" width="800" height="1132" alt="Copertina del Tempario opere civili, edizione 2026" loading="lazy"></div>
-          <p class="series">Tempario</p>
-          <h3>Tempario <span>Opere civili</span></h3>
-          <p>Scavi, strutture in c.a. e acciaio, murature, intonaci, pavimenti e finiture.</p>
-          <div class="price"><span class="tag solid">Ebook € 18</span></div>
-          <a class="store" href="https://www.ibs.it/tempario-per-opere-edili-civili-libro-luigi-grosso/e/9791282904063" target="_blank" rel="noopener">Acquista</a>
-        </article>
-
-        <article class="book">
-          <div class="cover"><img src="img/tempario-elettrici.jpg" width="800" height="1132" alt="Copertina del Tempario impianti elettrici, terza edizione 2026" loading="lazy"></div>
-          <p class="series">Tempario · Vol. 1 · Terza edizione</p>
-          <h3>Tempario <span>Impianti elettrici</span></h3>
-          <p>Tempi di posa, manodopera e sicurezza dalla distribuzione ai quadri, dall'illuminazione al fotovoltaico.</p>
-          <ul class="specs"><li>28 capitoli</li><li>TE.01 → TE.28</li><li>7.400+ voci</li></ul>
-          <div class="price"><span class="tag solid">Ebook € 18</span></div>
-          <a class="store" href="https://www.ibs.it/tempario-impianti-elettrici-2026-tempario-libro-luigi-grosso/e/9791298686762" target="_blank" rel="noopener">Acquista</a>
-        </article>
-
-        <article class="book">
-          <div class="cover"><img src="img/tempario-meccanici.jpg" width="800" height="1132" alt="Copertina del Tempario impianti meccanici, edizione 2026" loading="lazy"></div>
-          <p class="series">Tempario</p>
-          <h3>Tempario <span>Impianti meccanici</span></h3>
-          <p>Impianti idrico-sanitari, gas, antincendio, termici e di climatizzazione.</p>
-          <div class="price"><span class="tag solid">Ebook € 18</span></div>
-        </article>
-
-        <article class="book">
-          <div class="cover"><img src="img/regola-elettrici.jpg" width="800" height="1118" alt="Copertina di A perfetta regola d'arte, impianti elettrici" loading="lazy"></div>
-          <p class="series">Manuale abbinato al tempario</p>
-          <h3>A perfetta regola d'arte <span>Impianti elettrici</span></h3>
-          <p>Criteri di accettazione, prove, misure e documenti per le lavorazioni del Tempario impianti elettrici.</p>
-          <ul class="specs"><li>28 schede</li></ul>
-          <div class="price"><span class="tag solid">Ebook € 18</span><span class="tag">Cartaceo € 52</span></div>
-          <a class="store" href="https://www.ibs.it/a-perfetta-regola-d-arte-libro-luigi-grosso/e/9791298686779" target="_blank" rel="noopener">Acquista</a>
-        </article>
-
-        <article class="book">
-          <div class="cover"><img src="img/regola-meccanici.jpg" width="800" height="1028" alt="Copertina di A perfetta regola d'arte, impianti meccanici" loading="lazy"></div>
-          <p class="series">Manuale abbinato al tempario</p>
-          <h3>A perfetta regola d'arte <span>Impianti meccanici</span></h3>
-          <p>Criteri di accettazione, prove, misure e documenti per le lavorazioni del Tempario impianti meccanici.</p>
-          <ul class="specs"><li>34 schede</li></ul>
-          <div class="price"><span class="tag solid">Ebook € 18</span><span class="tag">Cartaceo € 52</span></div>
-        </article>
-
-        <article class="book">
-          <div class="cover"><img src="img/costi-parametrici.jpg" width="800" height="1028" alt="Copertina di Costi parametrici delle tipologie edilizie, edizione 2026" loading="lazy"></div>
-          <p class="series">Banca dati · Edizione 2026</p>
-          <h3>Costi parametrici <span>delle tipologie edilizie</span></h3>
-          <p>Quanto costa costruire al metro quadro: nuova costruzione, manutenzione ordinaria, ristrutturazione, recupero e restauro.</p>
-          <ul class="specs"><li>13 tipologie</li><li>107 province</li><li>€/m²</li></ul>
-          <div class="price"><span class="tag solid">Cartaceo € 42</span></div>
-          <a class="store" href="https://www.ibs.it/costi-parametrici-delle-tipologie-edilizie-libro-luigi-grosso/e/9791298686793" target="_blank" rel="noopener">Acquista</a>
-        </article>
-      </div>
+      <div class="sec-head"><h2>La mappa del sito</h2><p>Ogni mattone porta a una parte del sito: le collane, i materiali da scaricare, la nostra storia, dove acquistare e come contattarci.</p></div>
+      <nav class="map" aria-label="Mappa del sito">
+        <div class="row"><a class="brick " href="/catalogo/"><b>Catalogo completo</b><span>Tutti i volumi con copertina, prezzi e link d'acquisto.</span><em>23 titoli</em></a><a class="brick " href="/catalogo/#tempari"><b>Tempari e regola d'arte</b><span>Tempi di manodopera, collaudi e costi parametrici.</span><em>6 volumi</em></a><a class="brick " href="/catalogo/#pm"><b>Project management e appalti</b><span>RUP, gestione dell'appalto, stakeholder, contenzioso.</span><em>6 volumi</em></a></div>
+        <div class="row off"><span class="half" aria-hidden="true"></span><a class="brick " href="/catalogo/#costruito"><b>Ingegneria del costruito</b><span>Riabilitazione, restauro, manutenzione.</span><em>3 volumi</em></a><a class="brick " href="/catalogo/#saggi"><b>Saggistica</b><span>Il cantiere, Ischia, l'intelligenza artificiale.</span><em>4 volumi</em></a><a class="brick " href="/catalogo/#sole"><b>Con Il Sole 24 Ore</b><span>I prezzari della collana Analisi & Prezzi.</span><em>4 volumi</em></a><a class="brick " href="/collana-tempari/"><b>Com'è fatta una voce</b><span>Codice, tempo di posa, incidenza, sicurezza.</span><em>Collana tempari</em></a><a class="brick dark" href="/materiali/"><b>Materiali dei volumi</b><span>Modelli e file per chi ha acquistato il libro.</span><em>Area riservata</em></a><span class="half" aria-hidden="true"></span></div>
+        <div class="row"><a class="brick " href="/chi-siamo/"><b>Chi siamo</b><span>Dal 1994: CEDE, MASTRO S.r.l., la Banca dati.</span><em>La nostra storia</em></a><a class="brick " href="/acquista/"><b>Dove acquistare</b><span>Feltrinelli, IBS, Amazon, StreetLib e altre librerie.</span><em>Ebook e cartaceo</em></a><a class="brick " href="/contatti/"><b>Contatti</b><span>redazione@mastroeditore.com</span><em>Scrivi alla redazione</em></a></div>
+      </nav>
     </div>
   </section>
-
-  <section id="voce">
+  <section id="novita">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>Com'è fatta una voce</h2>
-        <p>Ogni lavorazione ha un codice, un'unità di misura e tre grandezze. Insieme permettono di stimare la squadra, controllare un'analisi prezzi o verificare la congruità della manodopera.</p>
-      </div>
-      <div class="voce" role="region" aria-label="Schema di una voce del tempario" tabindex="0">
-        <table>
-          <thead><tr><th>Codice</th><th>Descrizione della lavorazione</th><th>U.M.</th><th class="num">Tempo di posa</th><th class="num">Incidenza manodopera</th><th class="num">Oneri sicurezza</th></tr></thead>
-          <tbody>
-            <tr><td class="code">TE.xx.xxx</td><td>Fornitura e posa in opera di cavo multipolare in tubazione predisposta, comprese le terminazioni</td><td>m</td><td class="num">h/m</td><td class="num">% sul prezzo</td><td class="num">% sul prezzo</td></tr>
-            <tr><td class="code">TE.xx.xxx</td><td>Quadro di distribuzione da parete, assemblaggio e cablaggio delle apparecchiature modulari</td><td>cad</td><td class="num">h/cad</td><td class="num">% sul prezzo</td><td class="num">% sul prezzo</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">Schema illustrativo della struttura delle voci. I valori sono nel volume.</p>
-      <div class="legend">
-        <div><b>Tempo di posa</b><p>Le ore di lavoro necessarie per eseguire un'unità di lavorazione a regola d'arte.</p></div>
-        <div><b>Incidenza manodopera</b><p>La quota del prezzo che va al lavoro, quella su cui si misura la congruità.</p></div>
-        <div><b>Oneri della sicurezza</b><p>La quota legata alle misure di sicurezza proprie della lavorazione.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Per chi lavora sull'opera</h2>
-        <p>Strumenti pensati per chi deve dare un numero e poi rispondere di quel numero.</p>
-      </div>
-      <div class="who">
-        <div><b>Progettisti</b><p>Analisi prezzi, computi e cronoprogrammi costruiti su tempi verificabili.</p></div>
-        <div><b>Direttori dei lavori</b><p>Controllo delle lavorazioni, accettazione dei materiali, contabilità.</p></div>
-        <div><b>RUP e verificatori</b><p>Congruità della manodopera e verifica dei progetti nelle opere pubbliche.</p></div>
-        <div><b>Imprese</b><p>Offerte, organizzazione delle squadre e stima dei tempi di cantiere.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="chi-siamo">
-    <div class="wrap">
-      <div class="sec-head"><h2>Chi siamo</h2><p>Dal 1994 i dati di mercato per l'edilizia italiana: la storia di Banca dati Mastro e del suo fondatore, Luigi Grosso.</p></div>
-      <div class="chi">
-        <aside class="chi-col" aria-label="Chi siamo in sintesi">
-          <svg class="logo-svg" width="140" viewBox="0 0 813 449" role="img" aria-label="Logo Banca dati Mastro"><path d="M4 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9E3620"/><rect x="283" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 116h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="123" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="421" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 116h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#B14E36"/><rect x="697" y="123" width="109" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="283" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 348h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="355" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="421" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 348h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#9C3520"/><rect x="697" y="355" width="109" height="8" fill="#ffffff" fill-opacity=".12"/></svg>
-          <p class="eyebrow">Chi siamo</p>
-          <h3>Trent'anni di prezzi e analisi per le costruzioni</h3>
-          <p>Banca dati Mastro nasce nel 1994 dall'esperienza di Luigi Grosso, oggi ingegnere civile e docente di Project Management all'Università Federico II di Napoli, e di MASTRO S.r.l., società di servizi informatici per l'edilizia nata a Napoli. Dal 1998 al fianco del Sole 24 Ore, oggi torna con le Edizioni Mastro.</p>
-          <dl class="chi-figs">
-            <div><dt><strong>36.000</strong></dt><dd><span>voci composte</span></dd></div>
-            <div><dt><strong>400.000</strong></dt><dd><span>elementi tra materiali e specifiche</span></dd></div>
-            <div><dt><strong>120.000</strong></dt><dd><span>licenze d'uso sul mercato nazionale</span></dd></div>
-            <div><dt><strong>70%</strong></dt><dd><span>dei prezzari regionali con dati Mastro</span></dd></div>
-          </dl>
-          <div class="chi-refs"><h4>Principali referenze</h4><ul>
-            <li><b>1997</b>Deposito della Banca dati Mastro presso il Consiglio Superiore dei Lavori Pubblici, Roma.</li>
-            <li><b>1997</b>Deposito dello studio “Codifica strutturata” nel progetto “Applicazioni informatiche per la gestione delle opere pubbliche”, gruppo di lavoro presso il Consiglio Superiore dei Lavori Pubblici.</li>
-            <li><b>Dal 1994</b>Circa 120.000 licenze d'uso fornite sul mercato nazionale.</li>
-            <li><b>Prezzari regionali</b>Dati forniti a circa il 70% dei prezzari regionali italiani.</li>
-          </ul></div>
-        </aside>
-        <div class="tappe">
-          <article class="tappa"><p class="anno">1975 – anni ’80</p><div><h3>Le origini</h3><p>Luigi Grosso, classe 1956, si diploma geometra nel 1975 e si iscrive a Geologia all'Università Federico II di Napoli, ma sceglie presto il lavoro in un'impresa di costruzioni. Appassionato di elettronica, si forma sull'informatica prima su un Commodore CBM 3032 e poi, nei primi anni '80, su un NCR 8086 IBM compatibile.</p><p>Assunto da una grande impresa di rilievo nazionale, affianca al cantiere lo studio della contabilità industriale, fino a organizzare e dirigere il centro di contabilità industriale dell'azienda.</p></div></article>
-          <article class="tappa"><p class="anno">anni ’80 – ’90</p><div><h3>Da CEDE a MASTRO S.r.l.</h3><p>La richiesta di quegli strumenti cresce anche fuori dall'impresa. Luigi Grosso lascia il lavoro dipendente e fonda la CEDE, Centro Elaborazione Dati per l'Edilizia, che in pochi anni apre una sede a Bologna e amplia quella di Napoli fino a circa 15 dipendenti e 6 consulenti. La CEDE diventa ben presto MASTRO S.r.l., punto di riferimento per molte imprese di primaria importanza nazionale.</p><p>A Bologna arriva l'incarico di pianificare una commessa estera, per conto di un gruppo italiano, con contratto e capitolato NATO: un banco di prova decisivo per il controllo di gestione e le tecniche di project management. Negli anni '90 MASTRO lavora con committenti come Metropolitana Milanese, Politecnico di Milano, Comune di Napoli, Regione Basilicata, Regione Campania e Regione Calabria.</p></div></article>
-          <article class="tappa"><p class="anno">17.02.1992</p><div><h3>La svolta</h3><p>Il 17 febbraio 1992 inizia l'inchiesta Mani Pulite. Il mercato si ferma, le commesse si bloccano e nel giro di un anno MASTRO chiude la sede di Bologna e ridimensiona quella di Napoli. Ma i server sono pieni di dati, materiali e informazioni di mercato. Con i pochi collaboratori rimasti nasce un progetto nuovo, pensato per le esigenze di trasparenza del dopo Tangentopoli: la Banca dati Mastro.</p></div></article>
-          <article class="tappa"><p class="anno">1994</p><div><h3>La Banca dati Mastro</h3><p>Un database relazionale di prezzi di mercato e analisi di opere specialistiche per l'edilizia. Debutta al SAIE di Bologna, affiancato da un archivio informatico realizzato con STR S.r.l. di Pegognaga (MN), oggi TeamSystem, allora leader nel software per cantieri e appalti.</p><p class="vol">Il primo volume: <span>210 × 290 mm · dorso 130 mm · 4 kg</span>, con dati e analisi per 1.400 categorie di opere specialistiche.</p><p>Il primo cliente è l'Acquedotto Pugliese; seguono numerose imprese ed enti. La banca dati cresce fino a 36.000 voci composte da circa 400.000 elementi, tra materiali e specifiche civili, industriali e impiantistiche. MASTRO sviluppa intanto tecnologie avanzate di gestione dei dati e una sezione dedicata alla fotogrammetria terrestre.</p></div></article>
-          <article class="tappa"><p class="anno">1998</p><div><h3>Con Il Sole 24 Ore</h3><p>Grazie a un accordo con Il Sole 24 Ore nasce la collana <i>Analisi &amp; Prezzi in edilizia</i>, insieme ai Tempari, alle collane Capitolati e Codici e a molte altre pubblicazioni. Luigi Grosso firma inoltre numerosi articoli per <i>Edilizia &amp; Territorio</i> e per Il Sole 24 Ore.</p></div></article>
-          <article class="tappa"><p class="anno">anni ’90 – oggi</p><div><h3>Studio e docenza</h3><p>Accanto al lavoro, Luigi Grosso riprende gli studi da studente lavoratore. Negli anni '90 si laurea con il massimo dei voti in Pianificazione territoriale, urbanistica e ambientale, con uno studio sul monitoraggio delle frane elaborato con il CNR di Rende (CS); consegue poi anche la laurea in Ingegneria civile. Completa la formazione manageriale con il corso GEPROPI all'Università Bocconi di Milano, l'XI edizione dell'Executive MBA dell'Università di Bologna – Alma Mater Studiorum e il Master in Project Management dell'Università Suor Orsola Benincasa di Napoli.</p><p>Oggi è direttore delle Edizioni Mastro e coordina il gruppo tecnico di sviluppo della Banca dati Mastro. È inoltre docente a contratto di Project Management per le opere civili all'Università Federico II di Napoli, cultore della materia in Comunicazione all'Università Suor Orsola Benincasa e tiene corsi su gestione delle opere di ingegneria, sicurezza e controllo di gestione presso università, pubbliche amministrazioni e istituti.</p></div></article>
-          <article class="tappa"><p class="anno">oggi</p><div><h3>Edizioni Mastro</h3><p>MASTRO torna a pubblicare in proprio per l'edilizia e il management, in una veste moderna e aggiornata, insieme ai centri di ricerca, alle università e agli enti pubblici con cui ha sempre collaborato.</p></div></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="autore">
-    <div class="wrap">
-      <div class="sec-head"><h2>L'autore</h2><p>Luigi Grosso, ingegnere civile e urbanista ambientale.</p></div>
-      <div class="author">
-        <p class="quote">Libri scritti da chi i cantieri li vive ogni giorno.</p>
-        <div class="bio">
-          <p><strong>Luigi Grosso</strong> lavora come libero professionista su progettazione, coordinamento della sicurezza, project management e supporto al RUP nelle opere pubbliche.</p>
-          <p>Insegna <strong>Project management per opere di ingegneria</strong> all'Università Federico II di Napoli. È stato autore per Il Sole 24 Ore di analisi prezzi in edilizia, prezzari per la sicurezza di cantiere e capitolati, e ha scritto numerosi articoli per <i>Edilizia &amp; Territorio</i> e per Il Sole 24 Ore.</p>
-          <p>Il suo Tempario impianti elettrici, nato nel 2008, è alla base dei prezzari regionali della Campania e della Calabria. L'edizione 2026 lo aggiorna alle norme in vigore e lo amplia con nuove voci.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="edizioni">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Altri titoli di Edizioni Mastro</h2>
-        <p>Project management, storia del costruire, territorio e saggistica, dello stesso autore e della stessa casa editrice.</p>
-      </div>
-      <div class="others">
-        <article class="book">
-          <div class="cover"><img src="img/pm-rup.jpg" width="440" height="621" alt="Copertina di Project Management per il RUP, terza edizione" loading="lazy"></div>
-          <p class="series">Terza edizione · D.Lgs. 36/2023</p>
+      <div class="sec-head"><h2>Dal catalogo</h2><p>Alcuni titoli in evidenza. Tutti i volumi sono nel <a href="/catalogo/">catalogo completo</a>.</p></div>
+      <div class="newest">
+        <article class="book" id="pm-rup">
+          <div class="cover"><img src="/img/pm-rup.jpg" alt="Copertina di Project Management per il RUP" loading="lazy" referrerpolicy="no-referrer"></div>
+          <p class="series">D.Lgs. 36/2023 · PMBOK® 8ª ed.</p>
           <h3>Project Management per il RUP</h3>
-          <p>Il RUP come project manager dell'opera pubblica. 18 capitoli, check-list, due casi di studio e modelli pronti all'uso.</p>
-          <div class="price"><span class="tag solid">Cartaceo € 115</span></div>
-          <a class="store" href="https://www.ibs.it/project-management-per-rup-responsabile-libro-luigi-grosso/e/9791298686786" target="_blank" rel="noopener">Acquista</a>
+          <p>Il Responsabile unico del progetto come project manager dell&#x27;opera pubblica: metodi, strumenti e casi secondo il D.Lgs. 36/2023, la PMBOK® Guide e la serie ISO 21500.</p>
+          <div class="price"><span class="tag solid">Cartaceo € 140</span></div><a class="store" href="https://www.ibs.it/project-management-per-rup-responsabile-libro-luigi-grosso/e/9791298686786" target="_blank" rel="noopener">Acquista</a>
         </article>
-        <article class="book">
-          <div class="cover"><img src="img/il-cantiere.jpg" width="750" height="1200" alt="Copertina di Il cantiere. Arte, filosofia e matematica" loading="lazy"></div>
+        <article class="book" id="riserve">
+          <div class="cover"><img src="https://www.ibs.it/images/9791282904001_0_0_0_800_75.jpg" alt="Copertina di Riserve e contenzioso" loading="lazy" referrerpolicy="no-referrer"></div>
+          <p class="series">Nuova edizione</p>
+          <h3>Riserve e contenzioso</h3>
+          <p>Riserve, tutela giudiziaria e meccanismi alternativi di risoluzione delle controversie.</p>
+          <div class="price"><span class="tag solid">Cartaceo € 65</span></div><a class="store" href="https://www.ibs.it/riserve-contenzioso-riserve-tutela-giudiziaria-libro-luigi-grosso/e/9791282904001" target="_blank" rel="noopener">Acquista</a>
+        </article>
+        <article class="book" id="restauro">
+          <div class="cover"><img src="https://www.ibs.it/images/9791224749745_0_0_0_800_75.jpg" alt="Copertina di Tecniche di restauro" loading="lazy" referrerpolicy="no-referrer"></div>
+          <p class="series">Guida operativa</p>
+          <h3>Tecniche di restauro</h3>
+          <p>Norme, analisi, progetto e tecniche in schede e materiali per il costruito storico.</p>
+          <div class="price"><span class="tag solid">Cartaceo € 88</span></div><a class="store" href="https://www.ibs.it/tecniche-di-restauro-guida-operativa-libro-luigi-grosso/e/9791224749745" target="_blank" rel="noopener">Acquista</a>
+        </article>
+        <article class="book" id="il-cantiere">
+          <div class="cover"><img src="/img/il-cantiere.jpg" alt="Copertina di Il cantiere" loading="lazy" referrerpolicy="no-referrer"></div>
           <p class="series">Da Gerico a oggi</p>
           <h3>Il cantiere</h3>
           <p>Arte, filosofia e matematica: la storia del costruire dalle mura di Gerico alla Torre Eiffel.</p>
-          <div class="price"><span class="tag solid">Ebook € 12</span><span class="tag">Cartaceo € 85</span></div>
-          <a class="store" href="https://www.ibs.it/cantiere-arte-filosofia-matematica-libro-luigi-grosso/e/9791298686717" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover"><img src="img/isola-fragile.jpg" width="800" height="1128" alt="Copertina di L'isola fragile" loading="lazy"></div>
-          <p class="series">Ischia · 2017–2022</p>
-          <h3>L'isola fragile</h3>
-          <p>Ischia tra frane e terremoti: quale futuro per l'isola verde? 262 pagine, 19 capitoli.</p>
-          <div class="price"><span class="tag solid">Ebook € 3</span><span class="tag">Cartaceo € 18</span></div>
-          <a class="store" href="https://www.ibs.it/isola-fragile-ischia-tra-frane-libro-luigi-grosso/e/9791298686724" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover"><img src="img/il-confine.jpg" width="398" height="560" alt="Copertina di Il confine" loading="lazy"></div>
-          <p class="series">Saggistica</p>
-          <h3>Il confine</h3>
-          <p>Un'intelligenza artificiale si chiede se è davvero intelligente. Un saggio scritto da Claude, a cura di Luigi Grosso.</p>
-          <div class="price"><span class="tag solid">Ebook € 7</span><span class="tag">Cartaceo € 15</span></div>
-          <a class="store" href="https://www.ibs.it/confine-intelligenza-artificiale-si-chiede-libro-luigi-grosso/e/9791282904018" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#2F5D73"><small>Edizioni Mastro · Luigi Grosso</small><b>Governo</b><em>dell'appalto</em><div class="foot"></div></div></div>
-          <p class="series">Project management</p>
-          <h3>Governo dell'appalto <span>con tecniche del project management</span></h3>
-          <p>La gestione delle opere complesse con le tecniche del project management.</p>
-          <div class="price"><span class="tag solid">Cartaceo € 90</span></div>
-          <a class="store" href="https://www.ibs.it/governo-dell-appalto-con-tecniche-libro-luigi-grosso/e/9791298686755" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#8A4B2A"><small>Edizioni Mastro · Luigi Grosso</small><b>Manuale</b><em>riabilitazione strutturale</em><div class="foot"></div></div></div>
-          <p class="series">Dal cuci e scuci alle fibre di carbonio</p>
-          <h3>Manuale di riabilitazione strutturale</h3>
-          <p>Come valutare un edificio esistente e intervenire: dalle tecniche tradizionali (cuci-scuci, iniezioni, catene) ai rinforzi in FRP, FRCM e CRM, secondo NTC 2018 e Circolare 7/2019.</p>
-          <ul class="specs"><li>17 capitoli</li><li>39 schede operative</li></ul>
-          <div class="price"><span class="tag solid">Cartaceo € 88</span></div>
-          <a class="store" href="https://www.ibs.it/manuale-di-riabilitazione-strutturale-dal-libro-luigi-grosso/e/9791282904087" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#5B6B2E"><small>Edizioni Mastro · Luigi Grosso</small><b>Gestione</b><em>degli stakeholder</em><div class="foot"></div></div></div>
-          <p class="series">Appalti di opere pubbliche</p>
-          <h3>La gestione degli stakeholder <span>negli appalti di opere pubbliche</span></h3>
-          <p>I portatori di interesse come variabile dell'appalto, al pari di tempi, costi e rischi, governati con il Flusso di gestione degli stakeholder (FGS).</p>
-          <ul class="specs"><li>8 fasi</li><li>7 gate</li><li>16 modelli operativi</li></ul>
-          <div class="price"><span class="tag solid">Cartaceo € 65</span></div>
-          <a class="store" href="https://www.ibs.it/gestione-degli-stakeholder-negli-appalti-libro-luigi-grosso/e/9791282904056" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#2E6B4F"><small>Edizioni Mastro · Luigi Grosso</small><b>ISO 14001</b><em>2026</em><div class="foot"></div></div></div>
-          <p class="series">Manuale operativo</p>
-          <h3>Il sistema di gestione ambientale <span>UNI EN ISO 14001:2026</span></h3>
-          <p>Per ogni requisito della norma: cosa fare, chi lo fa, quale documento produrre e quali evidenze si aspetta l'auditor. Con un caso applicativo su un'impresa di costruzioni.</p>
-          <ul class="specs"><li>4 parti</li></ul>
-          <div class="price"><span class="tag solid">Cartaceo € 45</span></div>
-          <a class="store" href="https://www.ibs.it/sistema-di-gestione-ambientale-secondo-libro-luigi-grosso/e/9791282904049" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#6A3F6E"><small>Edizioni Mastro · Luigi Grosso</small><b style="font-size:clamp(22px,2.6vw,30px)">Performance</b><em>management system</em><div class="foot"></div></div></div>
-          <p class="series">Imprese e pubbliche amministrazioni</p>
-          <h3>Performance management system</h3>
-          <p>Misurare, valutare e gestire la performance di imprese e pubbliche amministrazioni, dalla strategia agli indicatori, dal budget al reporting, attorno al caso guida Officine Rinaldi S.p.A.</p>
-          <div class="price"><span class="tag solid">Cartaceo € 55</span></div>
-          <a class="store" href="https://www.ibs.it/performance-management-system-misurare-valutare-libro-luigi-grosso/e/9791282904032" target="_blank" rel="noopener">Acquista</a>
-        </article>
-        <article class="book">
-          <div class="cover type" aria-hidden="true"><div class="mock" style="--c:#9A6A12"><small>Edizioni Mastro · Luigi Grosso</small><b>Riserve</b><em>e contenzioso</em><div class="foot"></div></div></div>
-          <p class="series">Nuova edizione · D.Lgs. 36/2023</p>
-          <h3>Riserve e contenzioso</h3>
-          <p>Le controversie negli appalti pubblici dal fatto di cantiere alla decisione: riserve, accordo bonario, collegio consultivo tecnico, arbitrato e tutela giudiziaria.</p>
-          <div class="price"><span class="tag solid">Cartaceo € 65</span></div>
-          <a class="store" href="https://www.ibs.it/riserve-contenzioso-riserve-tutela-giudiziaria-libro-luigi-grosso/e/9791282904001" target="_blank" rel="noopener">Acquista</a>
+          <div class="price"><span class="tag solid">Cartaceo € 85</span><span class="tag">Ebook € 12</span></div><a class="store" href="https://www.ibs.it/cantiere-arte-filosofia-matematica-libro-luigi-grosso/e/9791298686717" target="_blank" rel="noopener">Acquista</a>
         </article>
       </div>
     </div>
   </section>
-
-  <section id="acquista">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Dove acquistare</h2>
-        <p>I volumi di Banca dati Mastro e di Edizioni Mastro sono in vendita online, in ebook e in cartaceo, sulle principali librerie italiane e internazionali. Cerca il titolo o “Luigi Grosso” nella libreria che preferisci.</p>
-      </div>
-      <div class="stores">
-        <a href="https://www.lafeltrinelli.it/" target="_blank" rel="noopener"><b>la Feltrinelli</b><span>Ebook · Cartaceo</span></a>
-        <a href="https://www.ibs.it/" target="_blank" rel="noopener"><b>IBS</b><span>Ebook · Cartaceo</span></a>
-        <a href="https://www.amazon.it/" target="_blank" rel="noopener"><b>Amazon</b><span>Kindle · Cartaceo</span></a>
-        <a href="https://www.libraccio.it/" target="_blank" rel="noopener"><b>Libraccio</b><span>Cartaceo</span></a>
-        <a href="https://www.mondadoristore.it/" target="_blank" rel="noopener"><b>Mondadori Store</b><span>Ebook</span></a>
-        <a href="https://www.ilgiardinodeilibri.it/" target="_blank" rel="noopener"><b>Il Giardino dei Libri</b><span>Cartaceo</span></a>
-        <a href="https://www.libreriauniversitaria.it/" target="_blank" rel="noopener"><b>Libreria Universitaria</b><span>Cartaceo</span></a>
-        <a href="https://www.kobo.com/it/it" target="_blank" rel="noopener"><b>Kobo</b><span>Ebook</span></a>
-        <a href="https://www.apple.com/it/apple-books/" target="_blank" rel="noopener"><b>Apple Books</b><span>Ebook</span></a>
-        <a href="https://play.google.com/store/books" target="_blank" rel="noopener"><b>Google Play Libri</b><span>Ebook</span></a>
-        <a href="https://store.streetlib.com/" target="_blank" rel="noopener"><b>StreetLib Store</b><span>Ebook · Cartaceo</span></a>
-        <div><b>In libreria</b><span>Ordinabile nelle librerie fisiche</span></div>
-      </div>
-      <p class="note">Distribuzione StreetLib. La disponibilità di ciascun titolo e formato può variare da una libreria all'altra.</p>
-    </div>
-  </section>
-
   <div class="contact" id="contatti">
     <div class="wrap">
-      <div>
-        <h2>Ordini e informazioni</h2>
-        <p>I libri sono in vendita online su la Feltrinelli, IBS, Amazon e nelle principali librerie, in ebook e cartaceo. Per preventivi su più copie o informazioni sui contenuti, scrivi a Banca dati Mastro sui suoi canali.</p>
-      </div>
+      <div><h2>Scrivi alla redazione</h2><p>Per informazioni sui volumi, preventivi per più copie, adozioni nei corsi o proposte editoriali.</p></div>
       <div class="channels">
-        <a href="#acquista"><b>Acquista</b><span>Feltrinelli · IBS · Amazon</span></a>
+        <div><b>Email</b><span class="mailbox"><code>redazione@mastroeditore.com</code></span></div>
         <a href="https://www.instagram.com/bancadatimastro/" target="_blank" rel="noopener"><b>Instagram</b><span>@bancadatimastro</span></a>
-        <div><b>Facebook</b><span>Pagina Banca dati Mastro</span></div>
+        <a href="/acquista/"><b>Acquista</b><span>Feltrinelli · IBS · Amazon</span></a>
       </div>
     </div>
   </div>
 </main>
-
 <footer>
   <div class="wrap">
-    <span>© 2026 Edizioni Mastro · Banca dati Mastro · In vendita su la Feltrinelli, IBS, Amazon e nelle librerie online</span>
-    <span>Collana tempari per opere di ingegneria civile e industriale</span>
+    <span>© 2026 Edizioni Mastro · Banca dati Mastro · <a href="mailto:redazione@mastroeditore.com">redazione@mastroeditore.com</a></span>
+    <span><a href="/privacy/">Privacy</a> · <a href="/catalogo/">Catalogo</a> · <a href="/materiali/">Materiali dei volumi</a></span>
   </div>
 </footer>
-
+<script>document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copiato'}catch(e){const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r)}}))</script>
 </body>
 </html>

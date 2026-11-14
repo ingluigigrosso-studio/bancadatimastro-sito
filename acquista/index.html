@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dove acquistare · Banca dati Mastro</title>
+<meta name="description" content="Dove acquistare i volumi di Edizioni Mastro: la Feltrinelli, IBS, Amazon, StreetLib Store e le principali librerie online, in ebook e cartaceo.">
+<link rel="canonical" href="https://bancadatimastro.it/acquista/">
+<link rel="icon" href="/img/logo.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Banca dati Mastro"><meta property="og:title" content="Dove acquistare · Banca dati Mastro"><meta property="og:description" content="Dove acquistare i volumi di Edizioni Mastro: la Feltrinelli, IBS, Amazon, StreetLib Store e le principali librerie online, in ebook e cartaceo."><meta property="og:url" content="https://bancadatimastro.it/acquista/"><meta property="og:image" content="https://bancadatimastro.it/img/collana.jpg"><meta property="og:locale" content="it_IT">
+<meta name="author" content="Luigi Grosso">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: catalogo editoriale a griglia, scandito da corsi di mattoni come i volumi della collana */
+:root{
+  --paper:#F2EEE6; --paper-2:#E9E2D6; --card:#FAF8F4;
+  --ink:#1E2430; --ink-2:#4A505C; --line:#CFC6B8;
+  --brick:#A63A28; --brick-2:#C2533C; --ochre:#9A6A12; --on-brick:#FFF7F2;
+  --f-display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --f-serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#16181D; --paper-2:#1E2128; --card:#20232B;
+  --ink:#EDE8DF; --ink-2:#B3AEA5; --line:#383C46;
+  --brick:#D9654D; --brick-2:#E8806A; --ochre:#D8A848; --on-brick:#1A0E0B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#16181D; --paper-2:#1E2128; --card:#20232B;
+  --ink:#EDE8DF; --ink-2:#B3AEA5; --line:#383C46;
+  --brick:#D9654D; --brick-2:#E8806A; --ochre:#D8A848; --on-brick:#1A0E0B; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brick);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+
+/* Logo: muro di mattoni */
+.wall{display:inline-grid;grid-template-columns:repeat(4,1fr);gap:2px;width:34px;flex:none}
+.wall i{display:block;height:6px;background:var(--brick)}
+.wall i:nth-child(5){grid-column:span 1}
+.wall .h{grid-column:span 2}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1.5px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font:700 21px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase}
+.nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.nav a{font:600 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding-block:6px}
+.nav a:hover{color:var(--brick)}
+
+/* Hero */
+.hero{padding-block:56px 0}
+.eyebrow{font:700 15px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--brick)}
+.hero h1{font:700 clamp(36px,6vw,68px)/1.06 var(--f-serif);margin-top:18px;max-width:17ch}
+.hero .lede{font-size:clamp(18px,2.1vw,21px);color:var(--ink-2);margin-top:20px;max-width:46ch}
+.buy{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px}
+.buy span{color:var(--ink-2);font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--brick);color:var(--on-brick);text-decoration:none;font:700 18px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;padding:14px 20px}
+.btn:hover{background:var(--brick-2)}
+.store{display:inline-block;margin-top:2px;font:600 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--brick);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px;align-self:flex-start}
+.store:hover{color:var(--brick-2)}
+.shelf{margin-top:40px;position:relative}
+.shelf img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 22px rgba(30,20,10,.18))}
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink);margin-top:36px}
+.figures div{padding:20px 16px 22px 0;border-right:1px solid var(--line);padding-left:16px}
+.figures div:first-child{padding-left:0}
+.figures div:last-child{border-right:0}
+.figures strong{display:block;font:700 clamp(36px,5vw,54px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.figures span{display:block;color:var(--ink-2);font-size:15px;margin-top:6px;line-height:1.35}
+@media (max-width:700px){.figures{grid-template-columns:repeat(2,minmax(0,1fr))}.figures div:nth-child(2){border-right:0}.figures div:nth-child(3){padding-left:0}.figures div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Corso di mattoni come separatore */
+.course{height:22px;margin-top:64px;background:
+  linear-gradient(var(--paper) 0 0) 0 10px/100% 2px no-repeat,
+  repeating-linear-gradient(90deg,var(--brick) 0 46px,var(--paper) 46px 48px) 0 0/100% 10px no-repeat,
+  repeating-linear-gradient(90deg,var(--brick-2) 0 46px,var(--paper) 46px 48px) 24px 12px/100% 10px no-repeat}
+
+/* Sezioni */
+section{padding-block:64px 8px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px;align-items:end;padding-bottom:28px;border-bottom:1.5px solid var(--ink);margin-bottom:36px}
+.sec-head h2{font:700 clamp(30px,4.2vw,46px)/1.08 var(--f-serif)}
+.sec-head p{color:var(--ink-2);max-width:56ch}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* Catalogo */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.book{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cover{aspect-ratio:7/10;max-width:100%;background:var(--paper-2);display:flex;align-items:flex-end;justify-content:center;padding:18px 18px 0;border-radius:2px}
+.cover img{display:block;width:auto;max-width:100%;max-height:100%;height:auto;box-shadow:0 14px 26px -10px rgba(30,20,10,.35);transition:transform .25s ease}
+.book:hover .cover img{transform:translateY(-4px)}
+.cover.type{align-items:stretch;padding:18px 18px 0}
+.mock{flex:1;background:#F3F0EA;color:#26221E;box-shadow:0 14px 26px -10px rgba(30,20,10,.35);display:flex;flex-direction:column;padding:9% 9% 0;border-top:4px solid var(--c,#9A6A12)}
+.mock .mw{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;width:40px;margin:0 auto 14px}
+.mock .mw i{height:6px;background:#A63A28}.mock .mw .h{grid-column:span 2}
+.mock small{font:500 8px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.mock b{font:700 clamp(30px,4vw,44px)/.95 var(--f-display);margin-top:10px;letter-spacing:.01em}
+.mock em{font:600 clamp(16px,2vw,22px)/1 var(--f-display);font-style:normal;color:var(--c);text-transform:uppercase;margin-top:6px}
+.mock .foot{margin-top:auto;margin-inline:-11%;background:#E7E0D5;height:16%}
+.series{font:600 13px/1 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--brick)}
+.book h3{font:700 26px/1.08 var(--f-display);text-transform:uppercase;letter-spacing:.01em}
+.book h3 span{display:block;color:var(--ochre)}
+.book p{color:var(--ink-2);font-size:16px;line-height:1.5}
+.specs{display:flex;flex-wrap:wrap;gap:6px}
+.specs li{list-style:none;font:500 12.5px/1 var(--f-mono);padding:6px 8px;border:1px solid var(--line);color:var(--ink-2)}
+ul.specs{margin:0;padding:0}
+.price{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
+.tag{font:700 17px/1 var(--f-display);letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;border:1.5px solid var(--ink);font-variant-numeric:tabular-nums}
+.tag.solid{background:var(--brick);border-color:var(--brick);color:var(--on-brick)}
+
+/* Anatomia di una voce */
+.voce{overflow-x:auto;border:1.5px solid var(--ink);background:var(--card)}
+.voce table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}
+.voce th{font:600 12px/1.2 var(--f-display);letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:12px 14px;border-bottom:1.5px solid var(--ink);color:var(--ink-2);vertical-align:bottom}
+.voce td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+.voce tr:last-child td{border-bottom:0}
+.voce td.code{font:500 14px/1.4 var(--f-mono);color:var(--brick);white-space:nowrap}
+.voce td.num{font:500 14px/1.4 var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.voce th.num{text-align:right}
+.legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;margin-top:28px}
+.legend div{min-width:0;border-top:1px solid var(--line);padding-top:14px}
+.legend b{display:block;font:700 18px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.04em}
+.legend p{color:var(--ink-2);font-size:15.5px;margin-top:6px}
+.note{font:400 13px/1.4 var(--f-mono);color:var(--ink-2);margin-top:12px}
+@media (max-width:760px){.legend{grid-template-columns:1fr}}
+
+/* Per chi */
+.who{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink)}
+.who div{padding:22px 20px 24px 0;min-width:0}
+.who div+div{border-left:1px solid var(--line);padding-left:20px}
+.who b{font:700 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.who p{color:var(--ink-2);font-size:15.5px;margin-top:8px}
+@media (max-width:860px){.who{grid-template-columns:repeat(2,minmax(0,1fr))}.who div:nth-child(3){border-left:0;padding-left:0}.who div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:480px){.who{grid-template-columns:1fr}.who div+div{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+
+/* Autore */
+.author{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:32px 56px;align-items:start}
+.author .quote{font:600 clamp(24px,3vw,32px)/1.25 var(--f-serif);border-left:4px solid var(--brick);padding-left:22px}
+.author .bio{display:grid;gap:16px;color:var(--ink-2);max-width:62ch}
+.author .bio strong{color:var(--ink)}
+@media (max-width:760px){.author{grid-template-columns:1fr}}
+
+/* Altri titoli */
+.others{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px}
+@media (max-width:900px){.others{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.others .cover{aspect-ratio:3/4}
+.others .book h3{font:700 22px/1.15 var(--f-serif);text-transform:none;letter-spacing:0}
+.others .tag{font-size:15px;padding:8px 10px}
+
+/* Dove acquistare */
+.stores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.stores a,.stores div{display:flex;flex-direction:column;gap:6px;padding:20px 20px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;min-width:0;position:relative}
+.stores a::after{content:"↗";position:absolute;top:18px;right:18px;color:var(--brick);font:600 18px/1 var(--f-body)}
+.stores a:hover{background:var(--card)}
+.stores a:hover b{color:var(--brick)}
+.stores b{font:700 24px/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.03em;padding-right:24px}
+.stores span{font:500 13px/1.3 var(--f-mono);color:var(--ink-2)}
+@media (max-width:860px){.stores{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.stores{grid-template-columns:1fr}}
+
+/* Contatti */
+.contact{background:var(--ink);color:var(--paper);margin-top:72px}
+.contact .wrap{padding-block:56px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:end}
+.contact h2{font:700 clamp(30px,4vw,44px)/1.1 var(--f-serif)}
+.contact p{opacity:.8;margin-top:14px;max-width:48ch}
+.channels{display:grid;gap:10px}
+.channels a,.channels div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1.5px solid color-mix(in srgb,var(--paper) 40%,transparent);text-decoration:none}
+.channels a:hover{border-color:var(--paper)}
+.channels b{font:700 18px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase}
+.channels span{font:400 14px/1.2 var(--f-mono);opacity:.85;overflow-wrap:anywhere;text-align:right}
+@media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+/* Logo */
+.logo-svg{display:block;height:auto;flex:none}
+/* Chi siamo */
+#chi-siamo{scroll-margin-top:90px}
+.chi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:32px 56px;align-items:start}
+.chi-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);background:var(--card);border:1.5px solid var(--ink);padding:26px 24px;display:grid;gap:18px;min-width:0}
+.chi-col h3{font:700 26px/1.15 var(--f-serif)}
+.chi-col p{color:var(--ink-2);font-size:16px}
+.chi-col .eyebrow{color:var(--brick)}
+.chi-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1.5px solid var(--ink);margin:0}
+.chi-figs div{padding:14px 12px 6px 0;min-width:0}
+.chi-figs dt,.chi-figs dd{margin:0}
+.chi-figs strong{display:block;font:700 32px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.chi-figs span{display:block;font-size:14px;line-height:1.3;color:var(--ink-2);margin-top:5px}
+.chi-refs h4{font:700 15px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+.chi-refs ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.chi-refs li{font-size:14.5px;line-height:1.45;color:var(--ink-2);border-left:3px solid var(--brick);padding-left:12px}
+.chi-refs li b{display:block;font:500 12.5px/1.4 var(--f-mono);color:var(--brick)}
+.tappe{display:grid;min-width:0}
+.tappa{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 28px;padding-block:24px;border-top:1px solid var(--line)}
+.tappa:first-child{border-top:0;padding-top:0}
+.tappa .anno{font:500 13.5px/1.4 var(--f-mono);color:var(--brick);padding-top:5px}
+.tappa h3{font:700 25px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.tappa p{color:var(--ink-2);margin-top:10px;max-width:64ch}
+.tappa p.vol{background:var(--paper-2);color:var(--ink);padding:12px 14px;font-size:15.5px}
+.tappa p.vol span{font:500 13.5px/1.4 var(--f-mono)}
+@media (max-width:860px){.chi{grid-template-columns:1fr}.chi-col{position:static}}
+@media (max-width:560px){.tappa{grid-template-columns:1fr}}
+
+/* Pagine interne e mappa */
+.nav a[aria-current="page"]{color:var(--brick)}
+.page-hero{padding-block:48px 8px}
+.page-hero h1{font:700 clamp(34px,5vw,56px)/1.06 var(--f-serif);margin-top:14px;max-width:20ch}
+.page-hero .lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);margin-top:16px;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips a{font:600 14px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);padding:9px 12px}
+.chips a:hover{background:var(--ink);color:var(--paper)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+section.coll{scroll-margin-top:90px}
+.coll .count{font:500 13px/1 var(--f-mono);color:var(--ink-2);margin-top:10px;display:block}
+.cover img[src^="https://www.ibs.it"]{background:var(--paper-2)}
+/* Mappa a mattoni */
+.map{display:grid;gap:10px;margin-top:8px}
+.map .row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.map .row.off{grid-template-columns:.5fr repeat(5,minmax(0,1fr)) .5fr}
+.map .half{background:var(--paper-2);border-radius:2px}
+.brick{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:128px;padding:16px 18px;text-decoration:none;color:var(--on-brick);background:var(--brick);border-radius:2px;position:relative;box-shadow:inset 0 6px 0 rgba(255,255,255,.10);transition:transform .15s ease,background .15s ease;min-width:0}
+.brick:nth-child(3n+2){background:color-mix(in srgb,var(--brick) 86%,#000)}
+.brick:nth-child(3n){background:var(--brick-2)}
+.brick:hover{transform:translateY(-3px)}
+.brick b{font:700 clamp(19px,2.1vw,24px)/1.05 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.brick span{font-size:14.5px;line-height:1.35;opacity:.92}
+.brick em{font:500 12.5px/1 var(--f-mono);font-style:normal;opacity:.85}
+.brick.dark{background:var(--ink);color:var(--paper)}
+.map .row.off .brick{grid-column:span 1}
+@media (max-width:860px){.map .row,.map .row.off{grid-template-columns:repeat(2,minmax(0,1fr))}.map .half{display:none}.brick,.map .row.off .brick{grid-column:span 1}}
+@media (max-width:480px){.map .row,.map .row.off{grid-template-columns:1fr}.map .row.off{padding-left:18px}}
+.newest{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px}
+@media (max-width:860px){.newest{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.newest{grid-template-columns:1fr}}
+.book h3,.brick b{hyphens:auto;overflow-wrap:break-word}
+.map .row.off .brick b{font-size:clamp(16px,1.55vw,20px)}
+.map .row.off .brick span{font-size:13.5px}
+.mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.mat a{display:flex;flex-direction:column;gap:8px;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;min-width:0}
+.mat a:hover{background:var(--card)}
+.mat b{font:700 22px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.mat span{font:500 13px/1.3 var(--f-mono);color:var(--brick)}
+@media (max-width:860px){.mat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.mat{grid-template-columns:1fr}}
+.mailbox{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mailbox code{font:500 17px/1.3 var(--f-mono);user-select:all;overflow-wrap:anywhere}
+.copy{font:600 13px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid currentColor;color:inherit;padding:7px 10px;cursor:pointer}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Banca dati Mastro, pagina iniziale">
+      <svg class="logo-svg" width="48" viewBox="0 0 813 449" aria-hidden="true"><path d="M4 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9E3620"/><rect x="283" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 0h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="7" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 116h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="123" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 116h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="421" y="123" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 116h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#B14E36"/><rect x="697" y="123" width="109" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="7" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M280 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="283" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M556 232h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="559" y="239" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M4 348h114l4 4v92l-4 4h-114l-4-4v-92z" fill="#AF4D35"/><rect x="7" y="355" width="108" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M142 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#9C3520"/><rect x="145" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M418 348h253l4 4v92l-4 4h-253l-4-4v-92z" fill="#A9412A"/><rect x="421" y="355" width="247" height="8" fill="#ffffff" fill-opacity=".12"/><path d="M694 348h115l4 4v92l-4 4h-115l-4-4v-92z" fill="#9C3520"/><rect x="697" y="355" width="109" height="8" fill="#ffffff" fill-opacity=".12"/></svg>
+      <b>Banca dati Mastro</b>
+    </a>
+    <nav class="nav" aria-label="Pagine del sito"><a href="/catalogo/">Catalogo</a><a href="/collana-tempari/">Collana tempari</a><a href="/materiali/">Materiali</a><a href="/chi-siamo/">Chi siamo</a><a href="/acquista/" aria-current="page">Acquista</a><a href="/contatti/">Contatti</a></nav>
+  </div>
+</header>
+<main id="top">
+  <div class="wrap page-hero"><p class="eyebrow">Acquista</p><h1>Dove acquistare</h1><p class="lede">Ogni scheda del <a href="/catalogo/">catalogo</a> ha il link diretto al libro. Qui trovi tutte le librerie in cui i volumi sono distribuiti.</p></div>
+  <section id="acquista">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Dove acquistare</h2>
+        <p>I volumi di Edizioni Mastro e della collana Banca dati Mastro sono in vendita online, in ebook e in cartaceo, sulle principali librerie italiane e internazionali. Cerca il titolo o “Luigi Grosso” nella libreria che preferisci.</p>
+      </div>
+      <div class="stores">
+        <a href="https://www.lafeltrinelli.it/" target="_blank" rel="noopener"><b>la Feltrinelli</b><span>Ebook · Cartaceo</span></a>
+        <a href="https://www.ibs.it/" target="_blank" rel="noopener"><b>IBS</b><span>Ebook · Cartaceo</span></a>
+        <a href="https://www.amazon.it/" target="_blank" rel="noopener"><b>Amazon</b><span>Kindle · Cartaceo</span></a>
+        <a href="https://www.libraccio.it/" target="_blank" rel="noopener"><b>Libraccio</b><span>Cartaceo</span></a>
+        <a href="https://www.mondadoristore.it/" target="_blank" rel="noopener"><b>Mondadori Store</b><span>Ebook</span></a>
+        <a href="https://www.ilgiardinodeilibri.it/" target="_blank" rel="noopener"><b>Il Giardino dei Libri</b><span>Cartaceo</span></a>
+        <a href="https://www.libreriauniversitaria.it/" target="_blank" rel="noopener"><b>Libreria Universitaria</b><span>Cartaceo</span></a>
+        <a href="https://www.kobo.com/it/it" target="_blank" rel="noopener"><b>Kobo</b><span>Ebook</span></a>
+        <a href="https://www.apple.com/it/apple-books/" target="_blank" rel="noopener"><b>Apple Books</b><span>Ebook</span></a>
+        <a href="https://play.google.com/store/books" target="_blank" rel="noopener"><b>Google Play Libri</b><span>Ebook</span></a>
+        <a href="https://store.streetlib.com/" target="_blank" rel="noopener"><b>StreetLib Store</b><span>Ebook · Cartaceo</span></a>
+        <div><b>In libreria</b><span>Ordinabile nelle librerie fisiche</span></div>
+      </div>
+      <p class="note">Distribuzione StreetLib. La disponibilità di ciascun titolo e formato può variare da una libreria all'altra.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Edizioni Mastro · Banca dati Mastro · <a href="mailto:redazione@mastroeditore.com">redazione@mastroeditore.com</a></span>
+    <span><a href="/privacy/">Privacy</a> · <a href="/catalogo/">Catalogo</a> · <a href="/materiali/">Materiali dei volumi</a></span>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copiato'}catch(e){const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r)}}))</script>
+</body>
+</html>

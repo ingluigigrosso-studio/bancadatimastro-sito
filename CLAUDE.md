@@ -3,19 +3,20 @@
 Sito statico pubblicato con GitHub Pages dal branch `main` (radice). Dominio: bancadatimastro.it (file `CNAME`).
 Proprietario: Ing. Luigi Grosso, Edizioni Mastro. Lingua del sito: italiano.
 
-## Struttura
-- `index.html` — l'intera pagina (HTML + CSS inline). Nessun build.
-- `img/` — copertine in JPG, referenziate come `img/<slug>.jpg`.
-- `catalogo.json` — elenco dei titoli già presenti sul sito (usato dal controllo automatico per capire cosa è nuovo).
-
-## Sezioni di index.html
-- `#collana` — volumi della collana Banca dati Mastro (tempari, A perfetta regola d'arte, Costi parametrici): griglia `.grid` di `<article class="book">`.
-- `#edizioni` — altri titoli di Edizioni Mastro: griglia `.others` di `<article class="book">`.
-- `#acquista` — elenco delle librerie online (distribuzione StreetLib).
+## Struttura (dal 14/11/2026: sito su più pagine)
+- `index.html` — pagina iniziale: introduzione, «mappa del sito» a mattoni, titoli in evidenza, contatti.
+- `catalogo/index.html` — catalogo completo, una `<section class="coll" id="…">` per collana: `tempari`, `pm` (project management e appalti), `costruito`, `saggi`, `sole` (edizioni Il Sole 24 Ore).
+- `collana-tempari/`, `chi-siamo/`, `materiali/`, `acquista/`, `contatti/` — pagine interne.
+- `risorse/<volume>/` — aree materiali riservate (Firebase), `risorse/area.js`; `privacy/` — informativa.
+- `img/` — copertine locali; le copertine mancanti sono prese da IBS (`https://www.ibs.it/images/<ISBN>_0_0_0_800_75.jpg`).
+- `catalogo.json` — elenco dei titoli presenti sul sito.
+- Le pagine sono generate da uno script (tools/site/build.py nella sessione Claude); se si modifica a mano, modificare `catalogo/index.html`.
 
 ## Come aggiungere un libro
-1. Copia un `<article class="book">` esistente della sezione giusta (collana se è un volume Banca dati Mastro/tempari, altrimenti edizioni).
-2. Compila: copertina (`img/<slug>.jpg`, oppure il blocco tipografico `.cover.type` se non c'è immagine), `.series`, `h3`, descrizione di 1–2 frasi presa dalla scheda del libro, `.specs` se ci sono numeri reali, prezzi in `.price` (`.tag.solid` per il primo formato, `.tag` per il secondo). Se esiste la scheda su una libreria, aggiungi sotto i prezzi `<a class="store" href="URL" target="_blank" rel="noopener">Acquista</a>`.
-3. Non inventare dati: prezzi, pagine, ISBN solo se presi da fonti (email StreetLib, schede Feltrinelli/IBS/Amazon).
-4. Aggiorna `catalogo.json` e, se cambia il numero di volumi della collana, la cifra in `.figures`.
-5. Commit su `main` con messaggio in italiano ("Aggiunto: <titolo>").
+1. Copia un `<article class="book">` nella sezione giusta di `catalogo/index.html`.
+2. Compila copertina, `.series`, `h3`, descrizione di 1–2 frasi presa dalla scheda del libro, prezzi in `.price` (`.tag.solid` per il primo formato), link `<a class="store" …>Acquista</a>` alla scheda IBS.
+3. Non inventare dati: prezzi e ISBN solo da fonti (StreetLib, schede IBS/Feltrinelli/Amazon).
+4. Aggiorna `catalogo.json` e i conteggi nella mappa di `index.html`.
+5. Commit su `main` con messaggio in italiano ("Aggiunto: <titolo>"). Replicare su mastroeditore.com.
+
+Contatti: redazione@mastroeditore.com.
