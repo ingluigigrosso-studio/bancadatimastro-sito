@@ -112,7 +112,13 @@ $("#f-codice").addEventListener("submit", async (e) => {
 
 function mostraFile(dati) {
   const ul = $("#lista-file"); ul.textContent = "";
-  const files = (dati && dati.files) || [];
+  // Formato semplice (campo testo «elenco»): voci separate da «;;» o a capo,
+  // ogni voce «Nome | indirizzo | descrizione». In alternativa l'array «files».
+  let files = (dati && dati.files) || [];
+  if (dati && typeof dati.elenco === "string") {
+    files = files.concat(dati.elenco.split(/;;|\n/).map(v => v.split("|").map(s => s.trim()))
+      .filter(p => p[0] && p[1]).map(([nome, url, descrizione]) => ({ nome, url, descrizione })));
+  }
   if (!files.length) { $("#nessun-file").hidden = false; }
   else {
     $("#nessun-file").hidden = true;
