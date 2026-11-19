@@ -229,16 +229,19 @@ section.coll{scroll-margin-top:90px}
 /* Mappa a mattoni: muro a 4 file, giunti regolari */
 .map{--giunto:14px;display:grid;gap:var(--giunto);margin-top:8px}
 .map .row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--giunto)}
-.brick,.map .half{--c:#A8412B;position:relative;background:var(--c);height:150px;clip-path:polygon(4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px),0 4px);min-width:0}
+.brick,.map .half{--c:#A8412B;position:relative;background:var(--c);height:160px;clip-path:polygon(4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px),0 4px);min-width:0}
 .brick::before,.map .half::before{content:"";position:absolute;left:7px;right:7px;top:7px;height:8px;background:rgba(255,255,255,.12)}
-.brick{grid-column:span 2;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:22px 20px 14px;text-decoration:none;color:var(--on-brick);overflow:hidden;transition:filter .15s ease}
+.brick{grid-column:span 2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:7px;padding:22px 18px 14px;text-decoration:none;color:var(--on-brick);overflow:hidden;transition:filter .15s ease}
 .map .half{grid-column:span 1;--c:#B14E36}
 .brick.t2{--c:#9C341F}.brick.t3{--c:#A03A24}.map .half.t2{--c:#9C341F}
 .brick:hover,.brick:focus-visible{filter:brightness(1.12)}
-.brick b{font:700 clamp(16px,1.6vw,20px)/1.08 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
-.brick span{font-size:14px;line-height:1.3;opacity:.92;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.brick em{font:500 12.5px/1 var(--f-mono);font-style:normal;opacity:.85}
+.brick b{font:700 clamp(18px,1.85vw,23px)/1.08 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.brick span{font-size:15.5px;line-height:1.3;opacity:.92;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.brick em{font:500 13.5px/1 var(--f-mono);font-style:normal;opacity:.85}
 @media (max-width:860px){.map .row{grid-template-columns:1fr}.map .half{display:none}.brick{grid-column:auto;height:auto;min-height:108px}}
+/* Copertine tutte della stessa grandezza */
+.cover{aspect-ratio:auto}
+.cover img{width:100%;height:auto;max-height:none;aspect-ratio:21/29;object-fit:cover;object-position:center top}
 .newest{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 24px}
 @media (max-width:860px){.newest{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.newest{grid-template-columns:1fr}}
